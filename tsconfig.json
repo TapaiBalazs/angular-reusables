@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "loading-indicator": [
+        "dist/loading-indicator"
+      ],
+      "loading-indicator/*": [
+        "dist/loading-indicator/*"
+      ]
+    }
   }
 }

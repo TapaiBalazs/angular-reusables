@@ -130,6 +130,41 @@
           }
         }
       }
+    },
+    "loading-indicator": {
+      "root": "projects/loading-indicator",
+      "sourceRoot": "projects/loading-indicator/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/loading-indicator/tsconfig.lib.json",
+            "project": "projects/loading-indicator/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/loading-indicator/src/test.ts",
+            "tsConfig": "projects/loading-indicator/tsconfig.spec.json",
+            "karmaConfig": "projects/loading-indicator/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/loading-indicator/tsconfig.lib.json",
+              "projects/loading-indicator/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-reusables"
