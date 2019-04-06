@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {startLoadingIndicator, stopLoadingIndicator} from '@btapai/ng-loading-indicator';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng-reusables';
+  @startLoadingIndicator
+  triggerLoadingIndicator() {
+    setTimeout(this.triggerLoadingIndicatorStop.bind(this), 5000);
+  }
+
+  @stopLoadingIndicator
+  triggerLoadingIndicatorStop() {
+    console.log('stopped');
+  }
 }

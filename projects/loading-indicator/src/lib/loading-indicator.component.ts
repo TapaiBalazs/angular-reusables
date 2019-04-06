@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {LoadingIndicatorService} from './loading-indicator.service';
+import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
+import {isLoading$} from './loading-indicator.decorators';
 
 @Component({
   selector: 'lib-loading-indicator',
@@ -13,11 +13,11 @@ import {Observable} from 'rxjs';
 })
 export class LoadingIndicatorComponent {
 
-  constructor(private loadingIndicatorService: LoadingIndicatorService) {
+  constructor() {
   }
 
   get isLoading$(): Observable<boolean> {
-    return this.loadingIndicatorService.isLoading$;
+    return isLoading$;
   }
 
 }
