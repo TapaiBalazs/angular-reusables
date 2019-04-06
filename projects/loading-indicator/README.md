@@ -1,24 +1,74 @@
 # LoadingIndicator
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+## How to install
 
-## Code scaffolding
+Install the package with the following script:
 
-Run `ng generate component component-name --project loading-indicator` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project loading-indicator`.
-> Note: Don't forget to add `--project loading-indicator` or else it will be added to the default project in your `angular.json` file. 
+```npm install @btapai/ng-loading-indicator```
 
-## Build
+or
 
-Run `ng build loading-indicator` to build the project. The build artifacts will be stored in the `dist/` directory.
+```yarn add @btapai/ng-loading-indicator```
 
-## Publishing
+## How to use
 
-After building your library with `ng build loading-indicator`, go to the dist folder `cd dist/loading-indicator` and run `npm publish`.
+Import the module into your main ngModule
+```typescript
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
+import {LoadingIndicatorModule} from '@btapai/ng-loading-indicator';
 
-## Running unit tests
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    LoadingIndicatorModule // place it into the imports array
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}
+```
 
-Run `ng test loading-indicator` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Add the loading-indicator component to your app.component template
+```angular2html
+<!-- add the component to the bottom of the file -->
+<lib-loading-indicator></lib-loading-indicator>
+```
 
-## Further help
+Use the method decorators to start/stop the indicator.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```typescript
+import {Component} from '@angular/core';
+import {startLoadingIndicator, stopLoadingIndicator} from '@btapai/ng-loading-indicator';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  @startLoadingIndicator
+  triggerLoadingIndicator() {
+    setTimeout(this.triggerLoadingIndicatorStop.bind(this), 5000);
+  }
+
+  @stopLoadingIndicator
+  triggerLoadingIndicatorStop() {
+    console.log('stopped');
+  }
+}
+
+```
+
+The loading indicator should appear.
+
+
+## Further plans
+
+I'd like to add the possibility for users of this library to be able to trigger their own loading-indicator component, or at least to be able to style the provided one.
+I'd also like to add the possibility to use a deterministic loading-indicator, with custom text and progress bar.
