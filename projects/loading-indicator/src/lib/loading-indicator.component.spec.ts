@@ -1,18 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
 import {LoadingIndicatorComponent} from './loading-indicator.component';
-import {startLoadingIndicator, stopLoadingIndicator} from './loading-indicator.decorators';
 import {skip, take} from 'rxjs/operators';
-
-class TriggerLoadingIndicator {
-  @startLoadingIndicator
-  start(): void {
-  }
-
-  @stopLoadingIndicator
-  stop(): void {
-  }
-}
+import {TriggerLoadingIndicator} from '../test/TriggerLoadingIndicator';
 
 describe('LoadingIndicatorComponent', () => {
   let component: LoadingIndicatorComponent;
