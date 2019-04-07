@@ -1,5 +1,5 @@
 <div class="btp-overlay" *ngIf="isLoading$ | async">
-  <div class="btp-loading-indicator__container">
-    <h1>LOADING</h1>
+  <div class="btp-loading-indicator__container" [style.width]="indicatorSize" [style.height]="indicatorSize">
+    <lib-spinner></lib-spinner>
   </div>
 </div>
