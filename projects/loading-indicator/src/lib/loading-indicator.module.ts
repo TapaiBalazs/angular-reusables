@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {LoadingIndicatorComponent} from './loading-indicator.component';
+import {LoadingIndicatorComponent} from './loading-indicator/loading-indicator.component';
 import {CommonModule} from '@angular/common';
 
 @NgModule({

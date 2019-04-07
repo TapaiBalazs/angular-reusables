@@ -1,15 +1,11 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
-import {isLoading$} from './loading-indicator.decorators';
+import {isLoading$} from '../loading-indicator.decorators';
 
 @Component({
   selector: 'lib-loading-indicator',
-  template: `
-    <p *ngIf="isLoading$ | async">
-      loading-indicator works!
-    </p>
-  `,
-  styles: []
+  templateUrl: './loading-indicator.component.html',
+  styleUrls: ['./loading-indicator.component.css']
 })
 export class LoadingIndicatorComponent {
 

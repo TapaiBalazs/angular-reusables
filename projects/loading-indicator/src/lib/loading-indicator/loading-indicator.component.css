@@ -1,0 +1,14 @@
+.btp-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(220, 220, 220, 0.3);
+  pointer-events: none;
+}
+
+.btp-loading-indicator__container {
+  position: relative;
+  top: 50%;
+}

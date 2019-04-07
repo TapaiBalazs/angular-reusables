@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {LoadingIndicatorComponent} from './loading-indicator.component';
 import {skip, take} from 'rxjs/operators';
-import {TriggerLoadingIndicator} from '../test/TriggerLoadingIndicator';
+import {TriggerLoadingIndicator} from '../../test/TriggerLoadingIndicator';
 
 describe('LoadingIndicatorComponent', () => {
   let component: LoadingIndicatorComponent;
