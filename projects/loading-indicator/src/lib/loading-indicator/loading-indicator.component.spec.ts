@@ -2,6 +2,8 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {LoadingIndicatorComponent} from './loading-indicator.component';
 import {skip, take} from 'rxjs/operators';
 import {TriggerLoadingIndicator} from '../../test/TriggerLoadingIndicator';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {DEFAULT_CONFIG, LOADING_INDICATOR_CONFIG} from '../loading-indicator.config';
 
 describe('LoadingIndicatorComponent', () => {
   let component: LoadingIndicatorComponent;
@@ -10,7 +12,9 @@ describe('LoadingIndicatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LoadingIndicatorComponent]
+      declarations: [LoadingIndicatorComponent],
+      providers: [{provide: LOADING_INDICATOR_CONFIG, useValue: DEFAULT_CONFIG}],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
 
     trigger = new TriggerLoadingIndicator();
