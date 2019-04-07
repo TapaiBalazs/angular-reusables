@@ -22,4 +22,10 @@ export class LoadingIndicatorComponent {
   get indicatorSize(): string {
     return `${this.config.size}px`;
   }
+
+  preventClicks(event: UIEvent): void {
+    console.log(event);
+    event.preventDefault();
+    event.stopPropagation();
+  }
 }
