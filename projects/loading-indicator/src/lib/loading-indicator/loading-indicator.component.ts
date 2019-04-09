@@ -14,6 +14,7 @@ export class LoadingIndicatorComponent implements OnInit, OnDestroy {
   focusTrap: ElementRef;
   private isLoadingSub: Subscription;
   private previousFocusTarget: HTMLElement;
+  private nextFocusTarget: HTMLElement;
 
   constructor(@Inject(LOADING_INDICATOR_CONFIG)
               private config: LoadingIndicatorConfig) {
@@ -42,8 +43,10 @@ export class LoadingIndicatorComponent implements OnInit, OnDestroy {
     this.isLoadingSub.unsubscribe();
   }
 
-  disableKeyboardEvents(event: KeyboardEvent): void {
+  disableKeyboardEvents(event: FocusEvent): void {
     event.preventDefault();
+    event.stopPropagation();
+    this.nextFocusTarget.focus();
   }
 
   private trapFocus(): void {
@@ -51,12 +54,14 @@ export class LoadingIndicatorComponent implements OnInit, OnDestroy {
     if (this.previousFocusTarget) {
       this.previousFocusTarget.blur();
     }
-    this.focusTrap.nativeElement.focus();
+    this.nextFocusTarget = this.focusTrap.nativeElement;
+    this.nextFocusTarget.focus();
   }
 
   private restoreFocus(): void {
     if (this.previousFocusTarget) {
-      this.previousFocusTarget.focus();
+      this.nextFocusTarget = this.previousFocusTarget;
+      this.nextFocusTarget.focus();
     }
   }
 }

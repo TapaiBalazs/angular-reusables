@@ -3,7 +3,7 @@
   "author": "balazs.tapai1990@gmail.com",
   "license": "MIT",
   "repository": "https://github.com/TapaiBalazs/angular-reusables",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
