@@ -1,3 +1,4 @@
+<a #focusTrap href="#" tabindex="-1" style="visibility: hidden;" (keydown)="disableKeyboardEvents($event)"></a>
 <a href="#" class="btp-overlay" *ngIf="isLoading$ | async">
   <div class="btp-loading-indicator__container" [style.width]="indicatorSize" [style.height]="indicatorSize">
     <lib-spinner></lib-spinner>
