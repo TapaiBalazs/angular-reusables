@@ -103,34 +103,6 @@
         }
       }
     },
-    "ng-reusables-e2e": {
-      "root": "e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-reusables:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ng-reusables:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "loading-indicator": {
       "root": "projects/loading-indicator",
       "sourceRoot": "projects/loading-indicator/src",

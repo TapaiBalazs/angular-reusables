@@ -8,8 +8,7 @@
     "build:lib:watch": "wait-on -i 3000 -t 30000 -l http-get://localhost:4200/ -v && ng build loading-indicator --watch",
     "build": "ng build",
     "test": "ng test loading-indicator --watch false",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -46,7 +45,6 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^4.2.0",
-    "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.0",
