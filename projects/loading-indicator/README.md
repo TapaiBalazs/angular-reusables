@@ -66,9 +66,3 @@ export class AppComponent {
 ```
 
 The loading indicator should appear.
-
-
-## Further plans
-
-I'd like to add the possibility for users of this library to be able to trigger their own loading-indicator component, or at least to be able to style the provided one.
-I'd also like to add the possibility to use a deterministic loading-indicator, with custom text and progress bar.
