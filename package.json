@@ -8,7 +8,10 @@
     "build:lib:watch": "wait-on -i 3000 -t 30000 -l http-get://localhost:4200/ -v && ng build loading-indicator --watch",
     "build": "ng build",
     "test": "ng test loading-indicator --watch false",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "e2e": "concurrently -k -n \"SERVE,CYPRESSfirst ",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {

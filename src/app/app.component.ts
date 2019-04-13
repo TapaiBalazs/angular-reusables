@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {startLoadingIndicator, stopLoadingIndicator} from '@btapai/ng-loading-indicator';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +6,4 @@ import {startLoadingIndicator, stopLoadingIndicator} from '@btapai/ng-loading-in
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @startLoadingIndicator
-  triggerLoadingIndicator() {
-    setTimeout(this.triggerLoadingIndicatorStop.bind(this), 5000);
-  }
-
-  @stopLoadingIndicator
-  triggerLoadingIndicatorStop() {
-    console.log('stopped');
-  }
 }

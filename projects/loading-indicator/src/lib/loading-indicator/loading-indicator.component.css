@@ -4,6 +4,12 @@
   left: 0;
 }
 
+.btp-focus-trap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
 .btp-overlay {
   display: flex;
   width: 100vw;

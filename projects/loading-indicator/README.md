@@ -17,7 +17,7 @@ Import the module into your main ngModule
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {LoadingIndicatorModule} from '@btapai/ng-loading-indicator';
+import {LoadingIndicatorPageModule} from '@btapai/ng-loading-indicator';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import {LoadingIndicatorModule} from '@btapai/ng-loading-indicator';
   ],
   imports: [
     BrowserModule,
-    LoadingIndicatorModule // place it into the imports array
+    LoadingIndicatorPageModule // place it into the imports array
   ],
   providers: [],
   bootstrap: [AppComponent]
