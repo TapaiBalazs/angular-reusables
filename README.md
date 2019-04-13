@@ -42,7 +42,7 @@ export class AppModule {
 Add the loading-indicator component to your app.component template
 ```angular2html
 <!-- add the component to the bottom of the file -->
-<lib-loading-indicator></lib-loading-indicator>
+<btp-loading-indicator></btp-loading-indicator>
 ```
 
 Use the method decorators to start/stop the indicator.

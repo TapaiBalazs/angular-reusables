@@ -1,6 +1,6 @@
 <input class="btp-focus-trap" #focusTrap type="hidden" tabindex="-1" style="opacity: 1" (blur)="disableKeyboardEvents($event)" />
 <div class="btp-overlay" *ngIf="isLoading$ | async">
   <div class="btp-loading-indicator__container" [style.width]="indicatorSize" [style.height]="indicatorSize">
-    <lib-spinner></lib-spinner>
+    <btp-spinner></btp-spinner>
   </div>
 </div>

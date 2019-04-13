@@ -17,7 +17,7 @@ Import the module into your main ngModule
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {LoadingIndicatorPageModule} from '@btapai/ng-loading-indicator';
+import {LoadingIndicatorModule} from '@btapai/ng-loading-indicator';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import {LoadingIndicatorPageModule} from '@btapai/ng-loading-indicator';
   ],
   imports: [
     BrowserModule,
-    LoadingIndicatorPageModule // place it into the imports array
+    LoadingIndicatorModule // place it into the imports array
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -37,7 +37,7 @@ export class AppModule {
 Add the loading-indicator component to your app.component template
 ```angular2html
 <!-- add the component to the bottom of the file -->
-<lib-loading-indicator></lib-loading-indicator>
+<btp-loading-indicator></btp-loading-indicator>
 ```
 
 Use the method decorators to start/stop the indicator.

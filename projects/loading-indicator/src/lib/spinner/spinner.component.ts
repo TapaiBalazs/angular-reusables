@@ -3,7 +3,7 @@ import {LOADING_INDICATOR_CONFIG} from '../loading-indicator.config';
 import {LoadingIndicatorConfig} from '../interfaces/loading-indicator.interfaces';
 
 @Component({
-  selector: 'lib-spinner',
+  selector: 'btp-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.css']
 })

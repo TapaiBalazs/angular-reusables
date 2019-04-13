@@ -5,7 +5,7 @@ import {LOADING_INDICATOR_CONFIG} from '../loading-indicator.config';
 import {LoadingIndicatorConfig} from '../interfaces/loading-indicator.interfaces';
 
 @Component({
-  selector: 'lib-loading-indicator',
+  selector: 'btp-loading-indicator',
   templateUrl: './loading-indicator.component.html',
   styleUrls: ['./loading-indicator.component.css']
 })
