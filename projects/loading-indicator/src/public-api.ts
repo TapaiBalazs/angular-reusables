@@ -1,5 +1,5 @@
 /*
- * Public API Surface of loading-indicator
+ * Public API Surface of loading-indicator-page
  */
 
 export * from './lib/loading-indicator/loading-indicator.component';

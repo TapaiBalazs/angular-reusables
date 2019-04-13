@@ -9,8 +9,7 @@
     "build": "ng build",
     "test": "ng test loading-indicator --watch false",
     "lint": "ng lint",
-    "e2e": "concurrently -k -n \"SERVE,CYPRESSfirst ",
-    "cypress:open": "cypress open",
+    "cypress:open": "wait-on -i 3000 -t 30000 -l http-get://localhost:4200/ -v && cypress open",
     "cypress:run": "cypress run"
   },
   "private": true,

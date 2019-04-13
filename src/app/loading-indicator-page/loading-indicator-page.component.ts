@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { startLoadingIndicator, stopLoadingIndicator } from '@btapai/ng-loading-indicator';
+import { startLoadingIndicator, stopLoadingIndicator } from 'loading-indicator';
 
 @Component({
   selector: 'app-loading-indicator',
@@ -9,7 +9,7 @@ import { startLoadingIndicator, stopLoadingIndicator } from '@btapai/ng-loading-
 export class LoadingIndicatorPageComponent {
   @startLoadingIndicator
   triggerLoadingIndicator() {
-    setTimeout(this.triggerLoadingIndicatorStop.bind(this), 100);
+    setTimeout(this.triggerLoadingIndicatorStop.bind(this), 500);
   }
 
   @stopLoadingIndicator

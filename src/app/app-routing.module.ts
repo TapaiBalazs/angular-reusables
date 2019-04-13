@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AppComponent} from './app.component';
+import {MainComponent} from './main/main.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent
+    component: MainComponent
   },
   {
     path: 'loading-indicator',
-    loadChildren: './loading-indicator/loading-indicator-page.module#LoadingIndicatorPageModule'
+    loadChildren: './loading-indicator-page/loading-indicator-page.module#LoadingIndicatorPageModule'
   }
 ];
 
