@@ -12,7 +12,7 @@ import {EllipsisComponent} from '@btapai/ng-loading-indicator';
     CommonModule,
     LoadingEllipsisPageRoutingModule,
     LoadingIndicatorModule.forRoot(),
-    FormsModule
+    FormsModule,
   ],
   providers: [
     {provide: LOADING_INDICATOR_CONFIG, useValue: {color: 'red', size: 160, indicatorComponent: EllipsisComponent}}

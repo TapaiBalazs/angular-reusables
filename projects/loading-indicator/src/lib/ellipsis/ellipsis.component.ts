@@ -19,8 +19,4 @@ export class EllipsisComponent {
   get indicatorSize(): string {
     return `${this.size}px`;
   }
-
-  get ellipsisSize(): string {
-    return `${this.size / 10}px`;
-  }
 }
