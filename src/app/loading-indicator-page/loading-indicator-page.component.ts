@@ -9,7 +9,7 @@ import { startLoadingIndicator, stopLoadingIndicator } from 'loading-indicator';
 export class LoadingIndicatorPageComponent {
   @startLoadingIndicator
   triggerLoadingIndicator() {
-    setTimeout(this.triggerLoadingIndicatorStop.bind(this), 500);
+    setTimeout(this.triggerLoadingIndicatorStop.bind(this), 100);
   }
 
   @stopLoadingIndicator

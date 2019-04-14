@@ -1,6 +1,4 @@
-import {Component, Inject} from '@angular/core';
-import {LOADING_INDICATOR_CONFIG} from '../loading-indicator.config';
-import {LoadingIndicatorConfig} from '../interfaces/loading-indicator.interfaces';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'btp-spinner',
@@ -8,16 +6,17 @@ import {LoadingIndicatorConfig} from '../interfaces/loading-indicator.interfaces
   styleUrls: ['./spinner.component.css']
 })
 export class SpinnerComponent {
+  color: '#7B1FA2';
+  size: 160;
 
-  constructor(@Inject(LOADING_INDICATOR_CONFIG)
-              private config: LoadingIndicatorConfig) {
+  constructor() {
   }
 
   get borderColor(): string {
-    return `${this.config.color} transparent transparent transparent`;
+    return `${this.color} transparent transparent transparent`;
   }
 
   get borderWidth(): string {
-    return `${this.config.size / 8}px`;
+    return `${this.size / 8}px`;
   }
 }

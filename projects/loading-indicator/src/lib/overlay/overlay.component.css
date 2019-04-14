@@ -1,0 +1,27 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.btp-focus-trap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.btp-overlay {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+  background-color: rgba(220, 220, 220, 0.3);
+  pointer-events: none;
+}

@@ -1,19 +1,17 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {LoadingIndicatorComponent} from './loading-indicator.component';
 import {skip, take} from 'rxjs/operators';
 import {TriggerLoadingIndicator} from '../../test/TriggerLoadingIndicator';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
-import {DEFAULT_CONFIG, LOADING_INDICATOR_CONFIG} from '../loading-indicator.config';
+import {OverlayComponent} from './overlay.component';
 
 describe('LoadingIndicatorComponent', () => {
-  let component: LoadingIndicatorComponent;
-  let fixture: ComponentFixture<LoadingIndicatorComponent>;
+  let component: OverlayComponent;
+  let fixture: ComponentFixture<OverlayComponent>;
   let trigger: TriggerLoadingIndicator;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LoadingIndicatorComponent],
-      providers: [{provide: LOADING_INDICATOR_CONFIG, useValue: DEFAULT_CONFIG}],
+      declarations: [OverlayComponent],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
 
@@ -21,7 +19,7 @@ describe('LoadingIndicatorComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoadingIndicatorComponent);
+    fixture = TestBed.createComponent(OverlayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
