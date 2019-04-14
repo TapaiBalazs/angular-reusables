@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'loading-indicator',
     loadChildren: './loading-indicator-page/loading-indicator-page.module#LoadingIndicatorPageModule'
+  },
+  {
+    path: 'loading-ellipsis',
+    loadChildren: './loading-ellipsis-page/loading-ellipsis-page.module#LoadingEllipsisPageModule'
   }
 ];
 

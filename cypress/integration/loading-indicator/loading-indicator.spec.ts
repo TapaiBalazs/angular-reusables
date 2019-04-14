@@ -1,4 +1,4 @@
-describe(`Loading Indicator`, () => {
+describe(`Loading Spinner`, () => {
   beforeEach(() => {
     cy.visit('#/loading-indicator');
   });
