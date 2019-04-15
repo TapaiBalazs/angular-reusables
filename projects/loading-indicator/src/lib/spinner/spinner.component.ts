@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {DEFAULT_SIZE, INDICATOR_COLOR} from '../constants/indicator.constants';
 
 @Component({
   selector: 'btp-spinner',
@@ -6,11 +7,8 @@ import {Component} from '@angular/core';
   styleUrls: ['./spinner.component.css']
 })
 export class SpinnerComponent {
-  color: '#7B1FA2';
-  size: 160;
-
-  constructor() {
-  }
+  color = INDICATOR_COLOR;
+  size = DEFAULT_SIZE;
 
   get borderColor(): string {
     return `${this.color} transparent transparent transparent`;

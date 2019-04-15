@@ -33,7 +33,7 @@ export class LoadingIndicatorComponent implements OnInit, OnDestroy {
 
   private loadComponent() {
     const component = this.config.indicatorComponent || SpinnerComponent;
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component as any);
     const viewContainerRef = this.host.viewContainerRef;
     viewContainerRef.clear();
     const componentRef: ComponentRef<any> = viewContainerRef.createComponent(componentFactory);

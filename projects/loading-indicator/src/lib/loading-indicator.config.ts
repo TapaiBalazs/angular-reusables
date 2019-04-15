@@ -1,10 +1,12 @@
 import {LoadingIndicatorConfig} from './interfaces/loading-indicator.interfaces';
 import {InjectionToken} from '@angular/core';
 import {SpinnerComponent} from './spinner/spinner.component';
+import {DEFAULT_SIZE, INDICATOR_COLOR, OVERLAY_BACKGROUND} from './constants/indicator.constants';
 
 export const DEFAULT_CONFIG: LoadingIndicatorConfig = {
-  size: 160,
-  color: '#7B1FA2',
+  size: DEFAULT_SIZE,
+  color: INDICATOR_COLOR,
+  overlayColor: OVERLAY_BACKGROUND,
   indicatorComponent: SpinnerComponent
 };
 

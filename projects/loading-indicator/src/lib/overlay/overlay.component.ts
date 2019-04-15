@@ -1,6 +1,8 @@
-import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
 import {isLoading$} from '../loading-indicator.decorators';
+import {LOADING_INDICATOR_CONFIG} from '../loading-indicator.config';
+import {LoadingIndicatorConfig} from '../interfaces/loading-indicator.interfaces';
 
 @Component({
   selector: 'btp-overlay',
@@ -14,8 +16,15 @@ export class OverlayComponent implements OnInit, OnDestroy {
   private previousFocusTarget: HTMLElement;
   private nextFocusTarget: HTMLElement;
 
+  constructor(@Inject(LOADING_INDICATOR_CONFIG) private config: LoadingIndicatorConfig) {
+  }
+
   get isLoading$(): Observable<boolean> {
     return isLoading$;
+  }
+
+  get overlayColor(): string {
+    return this.config.overlayColor || 'rgba(100,100,100,0.3)';
   }
 
   ngOnInit(): void {

@@ -22,6 +22,5 @@
   justify-content: center;
   align-items: center;
   flex: 1 1 auto;
-  background-color: rgba(220, 220, 220, 0.3);
   pointer-events: none;
 }

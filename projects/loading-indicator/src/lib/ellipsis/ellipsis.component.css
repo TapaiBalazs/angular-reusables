@@ -7,7 +7,7 @@
 }
 .btp-ellipsis div {
   position: absolute;
-  top: 33%;
+  top: 42%;
   width: 13%;
   height: 13%;
   border-radius: 50%;
@@ -17,19 +17,19 @@
   background-color: #7B1FA2;
 }
 .btp-ellipsis div:nth-child(1) {
-  left: 8%;
+  left: 16%;
   animation: btp-ellipsis1 0.6s infinite;
 }
 .btp-ellipsis div:nth-child(2) {
-  left: 8%;
+  left: 16%;
   animation: btp-ellipsis2 0.6s infinite;
 }
 .btp-ellipsis div:nth-child(3) {
-  left: 32%;
+  left: 40%;
   animation: btp-ellipsis2 0.6s infinite;
 }
 .btp-ellipsis div:nth-child(4) {
-  left: 56%;
+  left: 64%;
   animation: btp-ellipsis3 0.6s infinite;
 }
 @keyframes btp-ellipsis1 {

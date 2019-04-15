@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {DEFAULT_SIZE, INDICATOR_COLOR} from '../constants/indicator.constants';
 
 @Component({
   selector: 'btp-ellipsis',
@@ -6,11 +7,8 @@ import {Component} from '@angular/core';
   styleUrls: ['./ellipsis.component.css']
 })
 export class EllipsisComponent {
-  color: '#7B1FA2';
-  size: 160;
-
-  constructor() {
-  }
+  public color = INDICATOR_COLOR;
+  public size = DEFAULT_SIZE;
 
   get indicatorColor(): string {
     return this.color;
