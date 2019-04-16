@@ -65,7 +65,7 @@ export class AppComponent {
 
 ```
 
-## Customise
+## Customisation
 By default the loading-indicator is a spinner, however, by providing a custom configuration, you can customise the result.
 
 ```typescript
@@ -102,5 +102,10 @@ import {EllipsisComponent} from '@btapai/ng-loading-indicator';
 export class AppModule {
 }
 ```
+
+
+---
+
+## Future plans
 
 In future releases, I'd like to provide more indicators in the package, and the ability to add any component as an indicator.
