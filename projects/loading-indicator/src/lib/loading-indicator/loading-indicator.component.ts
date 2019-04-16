@@ -1,9 +1,9 @@
 import {Component, ComponentFactoryResolver, ComponentRef, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {Subscription} from 'rxjs';
 import {LOADING_INDICATOR_CONFIG} from '../loading-indicator.config';
 import {LoadingIndicatorConfig} from '../interfaces/loading-indicator.interfaces';
 import {IndicatorHostDirective} from '../directives/indicator-host.directive';
 import {SpinnerComponent} from '../spinner/spinner.component';
+import {DEFAULT_SIZE, INDICATOR_COLOR} from '../constants/indicator.constants';
 
 @Component({
   selector: 'btp-loading-indicator',
@@ -37,7 +37,7 @@ export class LoadingIndicatorComponent implements OnInit, OnDestroy {
     const viewContainerRef = this.host.viewContainerRef;
     viewContainerRef.clear();
     const componentRef: ComponentRef<any> = viewContainerRef.createComponent(componentFactory);
-    componentRef.instance.color = this.config.color;
-    componentRef.instance.size = this.config.size;
+    componentRef.instance.color = this.config.color || INDICATOR_COLOR;
+    componentRef.instance.size = this.config.size || DEFAULT_SIZE;
   }
 }
