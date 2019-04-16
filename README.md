@@ -72,6 +72,46 @@ export class AppComponent {
 
 The loading indicator should appear.
 
+## Customise
+By default the loading-indicator is a spinner, however, by providing a custom configuration, you can cusomise the result.
+
+```typescript
+export const DEFAULT_CONFIG: LoadingIndicatorConfig = {
+  size: 160, // size will determine the width and height of the indicator container (as a square)
+  color: '#7B1FA2', // the color you want for your indicator's background
+  overlayColor: 'rgba(100,100,100,0.3)', // the color you would like to use for the overlay
+  indicatorComponent: SpinnerComponent // By default it is a spinner
+};
+```
+
+The package itself contains an EllipsisComponent, which can be used as a replacement to the spinner.
+
+To do that, just provide a specified config file in your module
+```typescript
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {AppComponent} from './app.component';
+import {LOADING_INDICATOR_CONFIG, LoadingIndicatorModule} from 'loading-indicator';
+import {AppRoutingModule} from './app.routing.module';
+import {EllipsisComponent} from '@btapai/ng-loading-indicator';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    CommonModule,
+    AppRoutingModule,
+    LoadingIndicatorModule.forRoot(),
+  ],
+  providers: [
+    {provide: LOADING_INDICATOR_CONFIG, useValue: {color: 'red', size: 160, indicatorComponent: EllipsisComponent}}
+  ]
+})
+export class AppModule {
+}
+```
+
+In future releases, I'd like to provide more indicators in the package, and the ability to add any component as an indicator.
+
 ---
 
 # For contributors
