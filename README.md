@@ -70,8 +70,6 @@ export class AppComponent {
 
 ```
 
-The loading indicator should appear.
-
 ## Customise
 By default the loading-indicator is a spinner, however, by providing a custom configuration, you can cusomise the result.
 
