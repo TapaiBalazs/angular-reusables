@@ -66,7 +66,7 @@ export class AppComponent {
 ```
 
 ## Customise
-By default the loading-indicator is a spinner, however, by providing a custom configuration, you can cusomise the result.
+By default the loading-indicator is a spinner, however, by providing a custom configuration, you can customise the result.
 
 ```typescript
 export const DEFAULT_CONFIG: LoadingIndicatorConfig = {
