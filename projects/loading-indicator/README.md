@@ -103,6 +103,44 @@ export class AppModule {
 }
 ```
 
+If you would like to use your own indicator component, make sure that your component is an entryComponent, and provide it in the config:
+
+```typescript
+// component:
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'app-loading-message',
+  template: `<h1>Loading...</h1>`,
+  styles: [``]
+})
+export class LoadingMessageComponent {
+}
+
+// app module
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {AppComponent} from './app.component';
+import {LOADING_INDICATOR_CONFIG, LoadingIndicatorModule} from 'loading-indicator';
+import {AppRoutingModule} from './app.routing.module';
+import {LoadingMessageComponent} from './loading-message.component';
+
+@NgModule({
+  declarations: [AppComponent, LoadingMessageComponent],
+  imports: [
+    CommonModule,
+    AppRoutingModule,
+    LoadingIndicatorModule.forRoot(),
+  ],
+  entryComponents: [LoadingMessageComponent],
+  providers: [
+    {provide: LOADING_INDICATOR_CONFIG, useValue: {color: 'red', size: 160, indicatorComponent: LoadingMessageComponent}}
+  ]
+})
+export class AppModule {
+}
+
+```
 
 ---
 
