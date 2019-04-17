@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'loading-ellipsis',
     loadChildren: './loading-ellipsis-page/loading-ellipsis-page.module#LoadingEllipsisPageModule'
+  },
+  {
+    path: 'loading-message',
+    loadChildren: './loading-message-page/loading-message-page.module#LoadingMessagePageModule'
   }
 ];
 
