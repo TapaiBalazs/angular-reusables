@@ -1,28 +1,28 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {MainComponent} from './main/main.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: MainComponent
+    path: 'showcase',
+    component: MainComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: './loading-indicator-showcase/loading-indicator-showcase.module#LoadingIndicatorShowcaseModule'
+      }
+    ]
   },
   {
-    path: 'loading-indicator',
-    loadChildren: './loading-indicator-page/loading-indicator-page.module#LoadingIndicatorPageModule'
-  },
-  {
-    path: 'loading-ellipsis',
-    loadChildren: './loading-ellipsis-page/loading-ellipsis-page.module#LoadingEllipsisPageModule'
-  },
-  {
-    path: 'loading-message',
-    loadChildren: './loading-message-page/loading-message-page.module#LoadingMessagePageModule'
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: 'showcase/loading-indicator'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
