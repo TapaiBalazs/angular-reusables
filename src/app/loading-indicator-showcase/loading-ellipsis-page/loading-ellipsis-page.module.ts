@@ -15,7 +15,7 @@ import {EllipsisComponent} from 'loading-indicator';
     FormsModule,
   ],
   providers: [
-    {provide: LOADING_INDICATOR_CONFIG, useValue: {color: 'red', size: 160, indicatorComponent: EllipsisComponent}}
+    {provide: LOADING_INDICATOR_CONFIG, useValue: {size: 160, indicatorComponent: EllipsisComponent}}
   ]
 })
 export class LoadingEllipsisPageModule {

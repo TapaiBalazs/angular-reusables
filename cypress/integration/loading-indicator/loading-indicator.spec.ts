@@ -1,6 +1,6 @@
 describe(`Loading Spinner`, () => {
   beforeEach(() => {
-    cy.visit('#/loading-indicator');
+    cy.visit('#/loading-indicator/spinner');
   });
 
   it('When triggered using the decorators, whatever was focused, it is not focused anymore.', () => {
@@ -23,5 +23,28 @@ describe(`Loading Spinner`, () => {
     cy.get('btp-overlay').should('be.visible');
     cy.wait(100);
     cy.get('btp-overlay').should('not.be.visible');
+  });
+
+  it('Loading indicator can be customised using components imported from the library', () => {
+    cy.get('[data-test-id="cy_ellipsis_link"]').click();
+    cy.get('[data-test-id="cy-trigger-indicator"]').click();
+    cy.get('btp-overlay').should('be.visible');
+    cy.get('.btp-loading-indicator__container').should('exist');
+    cy.get('btp-ellipsis').should('exist');
+  });
+
+  it(`Ellipsis appearance can be customised and it should have color: purple`, () => {
+    cy.get('[data-test-id="cy_ellipsis_link"]').click();
+    cy.get('[data-test-id="cy-trigger-indicator"]').click();
+    cy.get('.btp-ellipsis').children().should('have.css', 'background-color')
+      .and('eq', 'rgb(123, 31, 162)');
+  });
+
+  it('Loading indicator can be customised using components created application side', () => {
+    cy.get('[data-test-id="cy_message_link"]').click();
+    cy.get('[data-test-id="cy-trigger-indicator"]').click();
+    cy.get('btp-overlay').should('be.visible');
+    cy.get('.btp-loading-indicator__container').should('exist');
+    cy.get('app-loading-message').should('exist');
   });
 });

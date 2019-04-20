@@ -1,0 +1,15 @@
+<section>
+  <h1>Loading Indicator Showcase </h1>
+  <div>
+    <ul class="selectors">
+      <li><a class="selectors__link" data-test-id="cy_spinner_link" href="#/loading-indicator/spinner">Spinner</a></li>
+      <li><a class="selectors__link" data-test-id="cy_ellipsis_link" href="#/loading-indicator/ellipsis">Ellipsis</a></li>
+      <li><a class="selectors__link" data-test-id="cy_message_link" href="#/loading-indicator/message">Custom message</a></li>
+    </ul>
+  </div>
+</section>
+<section>
+
+  <button data-test-id="cy-trigger-indicator" (click)="triggerLoadingIndicator()">START LOADING</button>
+</section>
+<router-outlet></router-outlet>
