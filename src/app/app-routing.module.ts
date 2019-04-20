@@ -4,7 +4,7 @@ import {MainComponent} from './main/main.component';
 
 const routes: Routes = [
   {
-    path: 'showcase',
+    path: 'loading-indicator',
     component: MainComponent,
     children: [
       {
@@ -16,7 +16,7 @@ const routes: Routes = [
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'showcase/loading-indicator'
+    redirectTo: 'loading-indicator/spinner'
   }
 ];
 

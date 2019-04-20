@@ -8,15 +8,15 @@ const routes: Routes = [
     component: LoadingIndicatorShowcaseComponent,
     children: [
       {
-        path: 'loading-indicator',
+        path: 'spinner',
         loadChildren: './loading-indicator-page/loading-indicator-page.module#LoadingIndicatorPageModule'
       },
       {
-        path: 'loading-ellipsis',
+        path: 'ellipsis',
         loadChildren: './loading-ellipsis-page/loading-ellipsis-page.module#LoadingEllipsisPageModule'
       },
       {
-        path: 'loading-message',
+        path: 'message',
         loadChildren: './loading-message-page/loading-message-page.module#LoadingMessagePageModule'
       }
     ]
