@@ -3,7 +3,7 @@ import {map} from 'rxjs/operators';
 
 type DecoratorFunction = (target: any, propertyKey: string | symbol, propertyDescriptor: PropertyDescriptor) => PropertyDescriptor;
 
-export const {progressState$, startProgressIndicator, stopProgressIndicator, setState} = (() => {
+export function createProgressIndicatorScope() {
   const isVisible = new BehaviorSubject<boolean>(false);
   const percengate = new BehaviorSubject<number>(0);
   const message = new BehaviorSubject<string>('');
@@ -21,7 +21,7 @@ export const {progressState$, startProgressIndicator, stopProgressIndicator, set
 
   const getDefaultMessage = (...args) => message.getValue();
 
-  function _startProgressIndicator(startMessage: string = ''): DecoratorFunction{
+  function _startProgressIndicator(startMessage: string = ''): DecoratorFunction {
     return (target: any, propertyKey: string | symbol, propertyDescriptor: PropertyDescriptor): PropertyDescriptor => {
       const original = propertyDescriptor.value;
       propertyDescriptor.value = (...args) => {
@@ -61,6 +61,13 @@ export const {progressState$, startProgressIndicator, stopProgressIndicator, set
     startProgressIndicator: _startProgressIndicator,
     stopProgressIndicator: _stopProgressIndicator,
     progressState$: state,
-    setState: _setState
+    setProgressIndicatorState: _setState
   };
-})();
+}
+
+export const {
+  progressState$,
+  startProgressIndicator,
+  stopProgressIndicator,
+  setProgressIndicatorState
+} = createProgressIndicatorScope();

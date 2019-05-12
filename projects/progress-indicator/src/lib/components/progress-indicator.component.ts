@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-progress-indicator',
+  selector: 'btp-progress-indicator',
   template: `
-    <p>
-      progress-indicator works!
-    </p>
+    <btp-overlay>
+      <div class="btp-progress-indicator__container">
+        <ng-template btpIndicatorHost></ng-template>
+      </div>
+    </btp-overlay>
   `,
   styles: []
 })

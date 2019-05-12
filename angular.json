@@ -142,7 +142,7 @@
       "root": "projects/progress-indicator",
       "sourceRoot": "projects/progress-indicator/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "btp",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
