@@ -2,7 +2,7 @@ import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core
 import {Observable, Subscription} from 'rxjs';
 // import {LOADING_INDICATOR_CONFIG} from '../loading-indicator.config';
 // import {LoadingIndicatorConfig} from '../interfaces/loading-indicator.interfaces';
-import {progressState$} from '../progress-indicator.decorators';
+import {progressState$} from '../../progress-indicator.decorators';
 import {pluck} from 'rxjs/operators';
 
 

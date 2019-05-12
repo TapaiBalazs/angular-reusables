@@ -4,6 +4,7 @@ import { LoadingIndicatorPageComponent } from './loading-indicator-page.componen
 import { LoadingIndicatorModule, LOADING_INDICATOR_CONFIG} from 'loading-indicator';
 import {LoadingIndicatorPageRoutingModule} from './loading-indicator-page.routing.module';
 import {FormsModule} from '@angular/forms';
+import {ProgressIndicatorModule} from '../../../../projects/progress-indicator/src/lib/progress-indicator.module';
 
 @NgModule({
   declarations: [LoadingIndicatorPageComponent],
@@ -11,7 +12,8 @@ import {FormsModule} from '@angular/forms';
     CommonModule,
     LoadingIndicatorPageRoutingModule,
     LoadingIndicatorModule.forRoot(),
-    FormsModule
+    FormsModule,
+    ProgressIndicatorModule
   ],
   providers: [{provide: LOADING_INDICATOR_CONFIG, useValue: { color: 'red', size: 80}}]
 })

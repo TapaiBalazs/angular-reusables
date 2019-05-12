@@ -28,6 +28,7 @@
     "@angular/router": "~7.2.0",
     "@angular/cdk": "~7.2.0",
     "@btapai/ng-loading-indicator": "file:dist/loading-indicator",
+    "@btapai/ng-progress-indicator": "file:dist/progress-indicator",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
