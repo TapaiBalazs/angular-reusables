@@ -4,10 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently -k -n \"APP,LIB\" -c \"green,magenta\" \"ng serve\" \"npm run build:lib:watch\"",
-    "build:lib": "ng build loading-indicator",
-    "build:lib:watch": "wait-on -i 3000 -t 30000 -l http-get://localhost:4200/ -v && ng build loading-indicator --watch",
+    "build:loading-indicator": "ng build loading-indicator",
+    "build:progress-indicator": "ng build progress-indicator",
+    "build:loading-indicator:watch": "wait-on -i 3000 -t 30000 -l http-get://localhost:4200/ -v && ng build loading-indicator --watch",
+    "build:progress-indicator:watch": "wait-on -i 3000 -t 30000 -l http-get://localhost:4200/ -v && ng build progress-indicator --watch",
     "build": "ng build",
-    "test": "ng test loading-indicator --watch false",
+    "test:loading-indicator": "ng test loading-indicator --watch false",
+    "test:progress-indicator": "ng test progress-indicator --watch false",
+    "test": "npm run test:loading-indicator && npm run test:progress-indicator",
     "lint": "ng lint",
     "cypress:open": "wait-on -i 3000 -t 30000 -l http-get://localhost:4200/ -v && cypress open",
     "cypress:run": "cypress run"
@@ -29,7 +33,7 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.13.0",
+    "@angular-devkit/build-angular": "^0.13.9",
     "@angular-devkit/build-ng-packagr": "~0.13.0",
     "@angular/cli": "~7.3.8",
     "@angular/compiler-cli": "~7.2.0",

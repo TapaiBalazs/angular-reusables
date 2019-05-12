@@ -24,6 +24,12 @@
       ],
       "loading-indicator/*": [
         "dist/loading-indicator/*"
+      ],
+      "progress-indicator": [
+        "dist/progress-indicator"
+      ],
+      "progress-indicator/*": [
+        "dist/progress-indicator/*"
       ]
     }
   }

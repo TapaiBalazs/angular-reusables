@@ -137,6 +137,41 @@
           }
         }
       }
+    },
+    "progress-indicator": {
+      "root": "projects/progress-indicator",
+      "sourceRoot": "projects/progress-indicator/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/progress-indicator/tsconfig.lib.json",
+            "project": "projects/progress-indicator/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/progress-indicator/src/test.ts",
+            "tsConfig": "projects/progress-indicator/tsconfig.spec.json",
+            "karmaConfig": "projects/progress-indicator/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/progress-indicator/tsconfig.lib.json",
+              "projects/progress-indicator/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-reusables"
