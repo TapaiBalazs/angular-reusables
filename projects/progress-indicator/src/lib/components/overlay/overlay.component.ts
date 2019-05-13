@@ -2,7 +2,7 @@ import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core
 import {Observable, Subscription} from 'rxjs';
 // import {LOADING_INDICATOR_CONFIG} from '../loading-indicator.config';
 // import {LoadingIndicatorConfig} from '../interfaces/loading-indicator.interfaces';
-import {progressState$} from '../../progress-indicator.decorators';
+import {state$} from '../../progress-indicator.decorators';
 import {pluck} from 'rxjs/operators';
 
 
@@ -22,7 +22,7 @@ export class OverlayComponent implements OnInit, OnDestroy {
   }
 
   get isVisible$(): Observable<boolean> {
-    return progressState$.pipe(pluck('isVisible$'));
+    return state$.pipe(pluck('isVisible$'));
   }
 
   get overlayColor(): string {
