@@ -9,15 +9,15 @@ const routes: Routes = [
     children: [
       {
         path: 'spinner',
-        loadChildren: './loading-indicator-page/loading-indicator-page.module#LoadingIndicatorPageModule'
+        loadChildren: () => import('./loading-indicator-page/loading-indicator-page.module').then(m => m.LoadingIndicatorPageModule)
       },
       {
         path: 'ellipsis',
-        loadChildren: './loading-ellipsis-page/loading-ellipsis-page.module#LoadingEllipsisPageModule'
+        loadChildren: () => import('./loading-ellipsis-page/loading-ellipsis-page.module').then(m => m.LoadingEllipsisPageModule)
       },
       {
         path: 'message',
-        loadChildren: './loading-message-page/loading-message-page.module#LoadingMessagePageModule'
+        loadChildren: () => import('./loading-message-page/loading-message-page.module').then(m => m.LoadingMessagePageModule)
       }
     ]
   }

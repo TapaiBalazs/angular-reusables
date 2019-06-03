@@ -10,7 +10,7 @@ import {LoadingIndicatorConfig} from '../interfaces/loading-indicator.interfaces
   styleUrls: ['./overlay.component.css']
 })
 export class OverlayComponent implements OnInit, OnDestroy {
-  @ViewChild('focusTrap')
+  @ViewChild('focusTrap', { static: true })
   focusTrap: ElementRef;
   private isLoadingSub: Subscription;
   private previousFocusTarget: HTMLElement;

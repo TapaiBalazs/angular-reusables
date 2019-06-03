@@ -84,7 +84,7 @@ To do that, just provide a specified config file in your module
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AppComponent} from './app.component';
-import {LOADING_INDICATOR_CONFIG, LoadingIndicatorModule} from 'loading-indicator';
+import {LOADING_INDICATOR_CONFIG, LoadingIndicatorModule} from '@btapai/ng-loading-indicator';;
 import {AppRoutingModule} from './app.routing.module';
 import {EllipsisComponent} from '@btapai/ng-loading-indicator';
 
@@ -121,7 +121,7 @@ export class LoadingMessageComponent {
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AppComponent} from './app.component';
-import {LOADING_INDICATOR_CONFIG, LoadingIndicatorModule} from 'loading-indicator';
+import {LOADING_INDICATOR_CONFIG, LoadingIndicatorModule} from '@btapai/ng-loading-indicator';;
 import {AppRoutingModule} from './app.routing.module';
 import {LoadingMessageComponent} from './loading-message.component';
 

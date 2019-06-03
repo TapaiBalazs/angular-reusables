@@ -9,7 +9,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: './loading-indicator-showcase/loading-indicator-showcase.module#LoadingIndicatorShowcaseModule'
+        loadChildren: () => import('./loading-indicator-showcase/loading-indicator-showcase.module').then(m => m.LoadingIndicatorShowcaseModule)
       }
     ]
   },

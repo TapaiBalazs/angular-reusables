@@ -11,7 +11,7 @@ import {DEFAULT_SIZE, INDICATOR_COLOR} from '../constants/indicator.constants';
   styleUrls: ['./loading-indicator.component.css']
 })
 export class LoadingIndicatorComponent implements OnInit, OnDestroy {
-  @ViewChild(IndicatorHostDirective)
+  @ViewChild(IndicatorHostDirective, { static: true })
   host: IndicatorHostDirective;
 
   constructor(@Inject(LOADING_INDICATOR_CONFIG)

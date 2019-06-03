@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {startLoadingIndicator, stopLoadingIndicator} from 'loading-indicator';
+import {startLoadingIndicator, stopLoadingIndicator} from '@btapai/ng-loading-indicator';;
 
 @Component({
   selector: 'app-loading-indicator-showcase',
