@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {startLoadingIndicator, stopLoadingIndicator} from '@btapai/ng-loading-indicator';;
+import {startLoadingIndicator, stopLoadingIndicator} from '@btapai/ng-loading-indicator';
 
 @Component({
   selector: 'app-loading-indicator-showcase',
@@ -15,5 +15,9 @@ export class LoadingIndicatorShowcaseComponent {
   @stopLoadingIndicator
   triggerLoadingIndicatorStop() {
     console.log('stopped');
+  }
+
+  triggerError() {
+    throw new Error('error triggered');
   }
 }
