@@ -16,8 +16,4 @@ export class LoadingIndicatorShowcaseComponent {
   triggerLoadingIndicatorStop() {
     console.log('stopped');
   }
-
-  triggerError() {
-    throw new Error('error triggered');
-  }
 }
