@@ -4,10 +4,11 @@ import {FullscreenOverlayContainer, OverlayContainer, OverlayModule} from '@angu
 import {ErrorHandlerService} from './error-handler.service';
 import {A11yModule} from '@angular/cdk/a11y';
 import {DEFAULT_ERROR_HANDLER_CONFIG, ERROR_HANDLER_CONFIG} from './error-handler.config';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [ErrorHandlerComponent],
-  imports: [OverlayModule, A11yModule],
+  imports: [CommonModule, OverlayModule, A11yModule],
   entryComponents: [ErrorHandlerComponent]
 })
 export class ErrorHandlerModule {

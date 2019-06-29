@@ -15,6 +15,10 @@ export class ErrorHandlerShowcaseComponent {
     this.http.get(this.getUrl()).subscribe(this.handleResult.bind(this));
   }
 
+  triggerRuntimeError() {
+    throw new Error('this is a runtime error');
+  }
+
   @startLoadingIndicator
   getUrl(): string {
     return 'wrong/url';

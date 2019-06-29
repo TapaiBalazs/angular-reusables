@@ -1,6 +1,7 @@
-import {AfterViewInit, Component, Inject} from '@angular/core';
+import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {ERROR_INJECTOR_TOKEN} from '../constants/error-handler.constants';
+import {SanitizedError} from '../interfaces/error-handler.interfaces';
 
 @Component({
   selector: 'btp-error-handler',
@@ -9,17 +10,24 @@ import {ERROR_INJECTOR_TOKEN} from '../constants/error-handler.constants';
       <h2>Error</h2>
       <p>{{error.message}}</p>
       <div class="btp-error-handler__scrollable">
-        <span>{{error.stack}}</span>
+        <ng-container *ngFor="let detail of error.details">
+          <div>{{detail}}</div>
+        </ng-container>
       </div>
       <button class="btp-error-handler__dismiss button red" (click)="dismiss()">DISMISS</button>
     </section>`,
   styleUrls: ['./error-handler.component.css'],
 })
-export class ErrorHandlerComponent {
+export class ErrorHandlerComponent implements OnInit {
   private isVisible = new Subject();
   dismiss$: Observable<{}> = this.isVisible.asObservable();
 
-  constructor(@Inject(ERROR_INJECTOR_TOKEN) public error) {
+  constructor(@Inject(ERROR_INJECTOR_TOKEN) public error: SanitizedError,
+              private ref: ChangeDetectorRef) {
+  }
+
+  ngOnInit(): void {
+    this.ref.detectChanges();
   }
 
   dismiss() {
