@@ -24,13 +24,17 @@ export class ErrorHandlerService implements ErrorHandler {
     const {overlayConfig, errorHandlerHooks} = this.injector.get(ERROR_HANDLER_CONFIG);
     const ngZone = this.injector.get(NgZone);
 
-    (errorHandlerHooks || []).forEach((hook) => hook(error));
+    this.runHooks(errorHandlerHooks, error);
     const overlayRef = this.createOverlayReference(overlayConfig);
     ngZone.run(() => {
       this.attachPortal(overlayRef, sanitised).subscribe(() => {
         overlayRef.dispose();
       });
     });
+  }
+
+  private runHooks(errorHandlerHooks: Array<(error: any) => void> = [], error): void {
+    errorHandlerHooks.forEach((hook) => hook(error));
   }
 
   private sanitiseError(error: Error | HttpErrorResponse): SanitizedError {

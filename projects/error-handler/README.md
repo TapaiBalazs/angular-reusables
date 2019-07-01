@@ -1,24 +1,35 @@
 # ErrorHandler
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
+## How to install
 
-## Code scaffolding
+Install the package with the following script:
 
-Run `ng generate component component-name --project error-handler` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project error-handler`.
-> Note: Don't forget to add `--project error-handler` or else it will be added to the default project in your `angular.json` file. 
+```npm install @btapai/ng-error-handler```
 
-## Build
+or
 
-Run `ng build error-handler` to build the project. The build artifacts will be stored in the `dist/` directory.
+```yarn add @btapai/ng-error-handler```
 
-## Publishing
+## How to use
 
-After building your library with `ng build error-handler`, go to the dist folder `cd dist/error-handler` and run `npm publish`.
+Import the module into your main ngModule
+```typescript
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
+import {ErrorHandlerModule} from '@btapai/ng-error-handler';
 
-## Running unit tests
-
-Run `ng test error-handler` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ErrorHandlerModule.forRoot() // place it into the imports array
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}
+```
