@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {ERROR_INJECTOR_TOKEN} from '../constants/error-handler.constants';
 import {SanitizedError} from '../interfaces/error-handler.interfaces';
@@ -18,16 +18,11 @@ import {SanitizedError} from '../interfaces/error-handler.interfaces';
     </section>`,
   styleUrls: ['./error-handler.component.css'],
 })
-export class ErrorHandlerComponent implements OnInit {
+export class ErrorHandlerComponent {
   private isVisible = new Subject();
   dismiss$: Observable<{}> = this.isVisible.asObservable();
 
-  constructor(@Inject(ERROR_INJECTOR_TOKEN) public error: SanitizedError,
-              private ref: ChangeDetectorRef) {
-  }
-
-  ngOnInit(): void {
-    this.ref.detectChanges();
+  constructor(@Inject(ERROR_INJECTOR_TOKEN) public error: SanitizedError) {
   }
 
   dismiss() {
