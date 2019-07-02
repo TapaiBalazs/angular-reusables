@@ -24,6 +24,12 @@
       ],
       "loading-indicator/*": [
         "dist/loading-indicator/*"
+      ],
+      "error-handler": [
+        "dist/error-handler"
+      ],
+      "error-handler/*": [
+        "dist/error-handler/*"
       ]
     }
   }

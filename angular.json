@@ -137,6 +137,41 @@
           }
         }
       }
+    },
+    "error-handler": {
+      "projectType": "library",
+      "root": "projects/error-handler",
+      "sourceRoot": "projects/error-handler/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/error-handler/tsconfig.lib.json",
+            "project": "projects/error-handler/ng-package.json",
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/error-handler/src/test.ts",
+            "tsConfig": "projects/error-handler/tsconfig.spec.json",
+            "karmaConfig": "projects/error-handler/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/error-handler/tsconfig.lib.json",
+              "projects/error-handler/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-reusables"

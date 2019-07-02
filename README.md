@@ -6,13 +6,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## NG Reusables
 
 * customisable loading-indicator: [@btapai/ng-loading-indicator](https://github.com/TapaiBalazs/angular-reusables/blob/master/projects/loading-indicator/README.md)
-
+* global error-handling: [@btapai/ng-error-handler](https://github.com/TapaiBalazs/angular-reusables/blob/master/projects/error-handler/README.md)
 
 ---
 ## Future plans
 
 * user-interaction messages service
-* easy-to-use global error handler
 
 ---
 
