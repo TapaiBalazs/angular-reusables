@@ -11,6 +11,7 @@ export class ErrorHandlerShowcaseComponent {
   constructor(private http: HttpClient) {
   }
 
+  @startLoadingIndicator
   trigger404Error() {
     this.http.get(this.getUrl()).subscribe(this.handleResult.bind(this));
   }
@@ -19,7 +20,7 @@ export class ErrorHandlerShowcaseComponent {
     throw new Error('this is a runtime error');
   }
 
-  @startLoadingIndicator
+  // @startLoadingIndicator
   getUrl(): string {
     return 'wrong/url';
   }
