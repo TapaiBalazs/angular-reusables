@@ -1,0 +1,11 @@
+<h3>
+  A large size image (https://placekitten.com/5400/5400) displays the loading indicator while the actual image is not yet loaded
+</h3>
+<img [src]="'https://placekitten.com/5400/5400' | imagePlaceholder | async" alt="imagePlaceholder pipe example" />
+<br>
+
+
+<h3>
+  A broken image url (https://placekitten.com/xxxx/yyyy) displays the 404 not found image when the actual image is not loaded.
+</h3>
+<img [src]="'https://placekitten.com/xxxx/yyyy' | imagePlaceholder | async" alt="imagePlaceholder pipe example" />

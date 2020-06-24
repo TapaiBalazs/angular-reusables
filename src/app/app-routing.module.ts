@@ -26,6 +26,17 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'image-tricks',
+    component: MainComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./image-tricks-showcase/image-tricks-showcase.module')
+          .then(m => m.ImageTricksShowcaseModule)
+      }
+    ]
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: 'loading-indicator/spinner'
