@@ -13,7 +13,7 @@ import {CommonModule} from '@angular/common';
 })
 export class ErrorHandlerModule {
 
-  public static forRoot(): ModuleWithProviders {
+  public static forRoot(): ModuleWithProviders<ErrorHandlerModule> {
     return {
       ngModule: ErrorHandlerModule,
       providers: [

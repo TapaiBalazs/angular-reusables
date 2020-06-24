@@ -29,7 +29,7 @@ import {EllipsisComponent} from './ellipsis/ellipsis.component';
   ]
 })
 export class LoadingIndicatorModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<LoadingIndicatorModule> {
     return {
       ngModule: LoadingIndicatorModule,
       providers: [{provide: LOADING_INDICATOR_CONFIG, useValue: DEFAULT_CONFIG}]
