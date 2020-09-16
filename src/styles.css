@@ -9,3 +9,7 @@ html, body {
   display: flex;
   font-family: 'Roboto', sans-serif;
 }
+
+.app-unauthorised {
+  opacity: 0.5;
+}

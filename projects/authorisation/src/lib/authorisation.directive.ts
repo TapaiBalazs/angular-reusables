@@ -2,13 +2,15 @@ import {Directive, ElementRef, EmbeddedViewRef, Inject, Input, OnDestroy, Option
 import {AuthorisationInterface} from './authorisation.interface';
 import {Subscription} from 'rxjs';
 import {AbstractControl} from '@angular/forms';
+import {AUTHORISATION_CLASS, AUTHORISATION_HANDLER} from './auth-tokens';
 
 export interface AuthorisationContext {
   $implicit: (b: boolean) => boolean;
 }
 
 @Directive({
-  selector: '[btpAuthorisation]'
+  // tslint:disable-next-line:directive-selector
+  selector: '[authorisation]'
 })
 export class AuthorisationDirective<T extends AuthorisationInterface> implements OnDestroy {
   private userSub: Subscription;
@@ -16,11 +18,11 @@ export class AuthorisationDirective<T extends AuthorisationInterface> implements
   private viewRef: EmbeddedViewRef<AuthorisationContext> = null;
   private formControl: AbstractControl = null;
 
-  constructor(@Inject('AUTHORISATION_HANDLER') private authService: AuthorisationInterface,
+  constructor(@Inject(AUTHORISATION_HANDLER) private authService: AuthorisationInterface,
               @Inject(ElementRef) private el: ElementRef,
               @Inject(ViewContainerRef) private viewContainer: ViewContainerRef,
               @Inject(TemplateRef) private templateRef: TemplateRef<AuthorisationContext>,
-              @Inject('AUTHORISATION_CLASS') @Optional() private authClass: string) {
+              @Inject(AUTHORISATION_CLASS) @Optional() private authClass: string) {
     this.userSub = this.authService.onUserChange$.subscribe(this.updateView.bind(this));
   }
 
@@ -65,8 +67,8 @@ export class AuthorisationDirective<T extends AuthorisationInterface> implements
   }
 
   private setUnauthorised(): void {
-    const boundElement = this.el.nativeElement.nextSibling;
-    if (boundElement.classList && this.authClass) {
+    const boundElement = this.el.nativeElement.nextSibling || this.el.nativeElement.previousSibling;
+    if (boundElement?.classList && this.authClass) {
       boundElement.classList.add(this.authClass);
     }
   }
