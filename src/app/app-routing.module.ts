@@ -26,6 +26,17 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'authorisation-handler',
+    component: MainComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./authorisation-directive-showcase/authorisation-directive-showcase.module')
+          .then(m => m.AuthorisationDirectiveShowcaseModule)
+      }
+    ]
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: 'loading-indicator/spinner'

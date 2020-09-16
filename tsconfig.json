@@ -30,6 +30,10 @@
       ],
       "error-handler/*": [
         "dist/error-handler/*"
+      ],
+      "authorisation": [
+        "dist/authorisation/authorisation",
+        "dist/authorisation"
       ]
     }
   }
