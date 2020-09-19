@@ -28,7 +28,7 @@ const HAS_NO_RIGHTS_HANLER = {
   onUserChange$: NEVER,
   hasReadAccess: () => false,
   hasWriteAccess: () => false
-}
+};
 
 describe('AuthorisationDirective', () => {
 
@@ -58,7 +58,7 @@ describe('AuthorisationDirective', () => {
 }-->`);
   });
 
-  it('Should display nothing if the user does not have any rights', () => {
+  it('Should display nothing, but the binding comment if the user does not have any rights', () => {
     const fixture = TestBed
       .overrideProvider(AUTHORISATION_HANDLER, { useValue: HAS_NO_RIGHTS_HANLER})
       .overrideTemplate(TestComponent, `<div *authorisation="'TEST'">TEST</div>`)
@@ -76,6 +76,17 @@ describe('AuthorisationDirective', () => {
       .createComponent(TestComponent);
     fixture.detectChanges();
     expect(fixture.nativeElement.innerHTML).toEqual(`<div class="unauthorised">TEST</div><!--bindings={
+  "ng-reflect-authorisation": "TEST"
+}-->`);
+  });
+
+  it('Should put the bindings comment after the element if it is on an ng-container', () => {
+    const fixture = TestBed
+      .overrideProvider(AUTHORISATION_HANDLER, { useValue: HAS_ONLY_READ_RIGHTS_HANDLER})
+      .overrideTemplate(TestComponent, `<ng-container *authorisation="'TEST'"><div>TEST</div></ng-container>`)
+      .createComponent(TestComponent);
+    fixture.detectChanges();
+    expect(fixture.nativeElement.innerHTML).toEqual(`<div>TEST</div><!--ng-container--><!--bindings={
   "ng-reflect-authorisation": "TEST"
 }-->`);
   });

@@ -67,7 +67,7 @@ export class AuthorisationDirective<T extends AuthorisationInterface> implements
   }
 
   private setUnauthorised(): void {
-    const boundElement = this.el.nativeElement.previousSibling || this.el.nativeElement.nextSibling;
+    const boundElement = this.el.nativeElement.previousSibling;
     if (boundElement?.classList && this.authClass) {
       boundElement.classList.add(this.authClass);
     }
