@@ -26,8 +26,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -180,6 +179,46 @@
             "tsConfig": [
               "projects/error-handler/tsconfig.lib.json",
               "projects/error-handler/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "authorisation": {
+      "projectType": "library",
+      "root": "projects/authorisation",
+      "sourceRoot": "projects/authorisation/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/authorisation/tsconfig.lib.json",
+            "project": "projects/authorisation/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/authorisation/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/authorisation/src/test.ts",
+            "tsConfig": "projects/authorisation/tsconfig.spec.json",
+            "karmaConfig": "projects/authorisation/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/authorisation/tsconfig.lib.json",
+              "projects/authorisation/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
