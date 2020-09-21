@@ -1,39 +1,32 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
   "projects": {
     "ng-reusables": {
-      "root": "",
-      "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
       "schematics": {},
+      "root": "apps/ng-reusables",
+      "sourceRoot": "apps/ng-reusables/src",
+      "prefix": "nx-reusables",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "outputPath": "dist/apps/ng-reusables",
+            "index": "apps/ng-reusables/src/index.html",
+            "main": "apps/ng-reusables/src/main.ts",
+            "polyfills": "apps/ng-reusables/src/polyfills.ts",
+            "tsConfig": "apps/ng-reusables/tsconfig.app.json",
             "aot": true,
-            "outputPath": "dist/ng-reusables",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["apps/ng-reusables/src/favicon.ico", "apps/ng-reusables/src/assets"],
+            "styles": ["apps/ng-reusables/src/styles.css"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "apps/ng-reusables/src/environments/environment.ts",
+                  "with": "apps/ng-reusables/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -41,7 +34,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -53,7 +45,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -76,160 +69,165 @@
             "browserTarget": "ng-reusables:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["apps/ng-reusables/tsconfig.app.json", "apps/ng-reusables/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!apps/ng-reusables/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/ng-reusables/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
     },
-    "loading-indicator": {
-      "root": "projects/loading-indicator",
-      "sourceRoot": "projects/loading-indicator/src",
-      "projectType": "library",
-      "prefix": "btp",
+    "ng-reusables-e2e": {
+      "root": "apps/ng-reusables-e2e",
+      "sourceRoot": "apps/ng-reusables-e2e/src",
+      "projectType": "application",
       "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
           "options": {
-            "tsConfig": "projects/loading-indicator/tsconfig.lib.json",
-            "project": "projects/loading-indicator/ng-package.json"
+            "cypressConfig": "apps/ng-reusables-e2e/cypress.json",
+            "tsConfig": "apps/ng-reusables-e2e/tsconfig.e2e.json",
+            "devServerTarget": "ng-reusables:serve"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/loading-indicator/tsconfig.lib.prod.json"
+              "devServerTarget": "ng-reusables:serve:production"
             }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/loading-indicator/src/test.ts",
-            "tsConfig": "projects/loading-indicator/tsconfig.spec.json",
-            "karmaConfig": "projects/loading-indicator/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/loading-indicator/tsconfig.lib.json",
-              "projects/loading-indicator/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["apps/ng-reusables-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/ng-reusables-e2e/**/*"]
           }
         }
       }
     },
     "error-handler": {
       "projectType": "library",
-      "root": "projects/error-handler",
-      "sourceRoot": "projects/error-handler/src",
-      "prefix": "lib",
+      "root": "libs/error-handler",
+      "sourceRoot": "libs/error-handler/src",
+      "prefix": "nx-reusables",
       "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/error-handler/tsconfig.lib.json",
-            "project": "projects/error-handler/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/error-handler/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/error-handler/src/test.ts",
-            "tsConfig": "projects/error-handler/tsconfig.spec.json",
-            "karmaConfig": "projects/error-handler/karma.conf.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/error-handler/tsconfig.lib.json",
-              "projects/error-handler/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["libs/error-handler/tsconfig.lib.json", "libs/error-handler/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/error-handler/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/error-handler/jest.config.js",
+            "passWithNoTests": true
           }
         }
-      }
+      },
+      "schematics": {}
+    },
+    "loading-indicator": {
+      "projectType": "library",
+      "root": "libs/loading-indicator",
+      "sourceRoot": "libs/loading-indicator/src",
+      "prefix": "nx-reusables",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/loading-indicator/tsconfig.lib.json", "libs/loading-indicator/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/loading-indicator/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/loading-indicator/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {}
     },
     "authorisation": {
       "projectType": "library",
-      "root": "projects/authorisation",
-      "sourceRoot": "projects/authorisation/src",
-      "prefix": "lib",
+      "root": "libs/authorisation",
+      "sourceRoot": "libs/authorisation/src",
+      "prefix": "nx-reusables",
       "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "projects/authorisation/tsconfig.lib.json",
-            "project": "projects/authorisation/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/authorisation/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/authorisation/src/test.ts",
-            "tsConfig": "projects/authorisation/tsconfig.spec.json",
-            "karmaConfig": "projects/authorisation/karma.conf.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/authorisation/tsconfig.lib.json",
-              "projects/authorisation/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["libs/authorisation/tsconfig.lib.json", "libs/authorisation/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/authorisation/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/authorisation/jest.config.js",
+            "passWithNoTests": true
           }
         }
-      }
+      },
+      "schematics": {}
     }
   },
-  "defaultProject": "ng-reusables",
   "cli": {
-    "analytics": "7c53c421-12a6-48bb-b94b-bb31b5e46218"
-  }
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "21accaac-b3c3-4a33-9551-a6959b806847"
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "ng-reusables"
 }

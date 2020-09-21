@@ -1,4 +1,0 @@
-<input class="btp-focus-trap" #focusTrap type="hidden" tabindex="-1" style="opacity: 1" (blur)="disableKeyboardEvents($event)" />
-<div class="btp-overlay" *ngIf="isLoading$ | async" [style.background-color]="overlayColor">
-  <ng-content></ng-content>
-</div>

@@ -1,0 +1,7 @@
+<div *authorisation="'BIG_RED_BUTTON'; let hasWriteAccess">
+  {{ hasWriteAccess(false) }}
+  <button [disabled]="hasWriteAccess(false)">BIG RED BUTTON</button>
+</div>
+<div>
+  Form comes here
+</div>

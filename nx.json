@@ -1,0 +1,45 @@
+{
+  "npmScope": "nx-reusables",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "accessToken": "N2JhY2M3NDItY2FkNy00OWViLWIzNjMtNzQwNDk3Y2Y2OGFhfHJlYWQtd3JpdGU=",
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    }
+  },
+  "projects": {
+    "ng-reusables": {
+      "tags": []
+    },
+    "ng-reusables-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ng-reusables"]
+    },
+    "error-handler": {
+      "tags": []
+    },
+    "loading-indicator": {
+      "tags": []
+    },
+    "authorisation": {
+      "tags": []
+    }
+  }
+}
