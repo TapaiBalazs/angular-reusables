@@ -6,7 +6,7 @@
       "schematics": {},
       "root": "apps/ng-reusables",
       "sourceRoot": "apps/ng-reusables/src",
-      "prefix": "nx-reusables",
+      "prefix": "btp",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -116,7 +116,7 @@
       "projectType": "library",
       "root": "libs/error-handler",
       "sourceRoot": "libs/error-handler/src",
-      "prefix": "nx-reusables",
+      "prefix": "btp",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
@@ -154,7 +154,7 @@
       "projectType": "library",
       "root": "libs/loading-indicator",
       "sourceRoot": "libs/loading-indicator/src",
-      "prefix": "nx-reusables",
+      "prefix": "btp",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
@@ -192,7 +192,7 @@
       "projectType": "library",
       "root": "libs/authorisation",
       "sourceRoot": "libs/authorisation/src",
-      "prefix": "nx-reusables",
+      "prefix": "btp",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
