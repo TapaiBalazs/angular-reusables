@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { LOADING_INDICATOR_CONFIG, LoadingIndicatorModule } from '@nx-reusables/loading-indicator';
+import { LOADING_INDICATOR_CONFIG, LoadingIndicatorModule } from '@btapai/ng-loading-indicator';
 import { LoadingMessagePageComponent } from './loading-message-page.component';
 import { LoadingMessagePageRoutingModule } from './loading-message-page.routing.module';
 import { LoadingMessageComponent } from './loading-message.component';

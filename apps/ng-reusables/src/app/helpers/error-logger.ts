@@ -1,4 +1,4 @@
-import { stopLoadingIndicator } from '@nx-reusables/loading-indicator';
+import { stopLoadingIndicator } from '@btapai/ng-loading-indicator';
 
 export class ErrorLogger {
   @stopLoadingIndicator

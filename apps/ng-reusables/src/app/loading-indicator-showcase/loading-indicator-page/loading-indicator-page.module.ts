@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { LOADING_INDICATOR_CONFIG, LoadingIndicatorModule } from '@nx-reusables/loading-indicator';
+import { LOADING_INDICATOR_CONFIG, LoadingIndicatorModule } from '@btapai/ng-loading-indicator';
 import { LoadingIndicatorPageComponent } from './loading-indicator-page.component';
 import { LoadingIndicatorPageRoutingModule } from './loading-indicator-page.routing.module';
 

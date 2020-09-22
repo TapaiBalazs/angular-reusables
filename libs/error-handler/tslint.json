@@ -1,8 +1,8 @@
 {
-  "extends": "../../tslint.json",
+  "extends": "../../../nx-reusables/tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "btp", "camelCase"],
-    "component-selector": [true, "element", "btp", "kebab-case"]
+    "directive-selector": [true, "attribute", "nxReusables", "camelCase"],
+    "component-selector": [true, "element", "nx-reusables", "kebab-case"]
   },
   "linterOptions": {
     "exclude": ["!**/*"]

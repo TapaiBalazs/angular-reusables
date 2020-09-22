@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AUTHORISATION_CLASS, AUTHORISATION_HANDLER, AuthorisationModule } from '@nx-reusables/authorisation';
-import { ERROR_HANDLER_CONFIG, ErrorHandlerConfig, ErrorHandlerModule } from '@nx-reusables/error-handler';
+import { ERROR_HANDLER_CONFIG, ErrorHandlerConfig, ErrorHandlerModule } from '@btapai/ng-error-handler';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ErrorLogger } from './helpers/error-logger';

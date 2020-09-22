@@ -118,10 +118,25 @@
       "sourceRoot": "libs/error-handler/src",
       "prefix": "nx-reusables",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/error-handler/tsconfig.lib.json",
+            "project": "libs/error-handler/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/error-handler/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/error-handler/tsconfig.lib.json", "libs/error-handler/tsconfig.spec.json"],
+            "tsConfig": [
+              "libs/error-handler/tsconfig.lib.json",
+              "libs/error-handler/tsconfig.spec.json"
+            ],
             "exclude": ["**/node_modules/**", "!libs/error-handler/**/*"]
           }
         },
@@ -141,10 +156,25 @@
       "sourceRoot": "libs/loading-indicator/src",
       "prefix": "nx-reusables",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/loading-indicator/tsconfig.lib.json",
+            "project": "libs/loading-indicator/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/loading-indicator/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/loading-indicator/tsconfig.lib.json", "libs/loading-indicator/tsconfig.spec.json"],
+            "tsConfig": [
+              "libs/loading-indicator/tsconfig.lib.json",
+              "libs/loading-indicator/tsconfig.spec.json"
+            ],
             "exclude": ["**/node_modules/**", "!libs/loading-indicator/**/*"]
           }
         },

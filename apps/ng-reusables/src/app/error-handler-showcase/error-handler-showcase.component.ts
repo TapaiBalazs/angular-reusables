@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { startLoadingIndicator, stopLoadingIndicator } from '@nx-reusables/loading-indicator';
+import { startLoadingIndicator, stopLoadingIndicator } from '@btapai/ng-loading-indicator';
 
 @Component({
   selector: 'app-error-handler-showcase',
