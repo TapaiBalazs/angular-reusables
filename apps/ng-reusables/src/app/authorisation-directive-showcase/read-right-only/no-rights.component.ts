@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AUTHORISATION_HANDLER } from '@nx-reusables/authorisation';
+import { AUTHORISATION_HANDLER } from '@btapai/ng-authorisation';
 import { AuthorisationImplService } from '../../main/authorisation-impl.service';
 import { ReadRightOnlyComponent } from './read-right-only.component';
 

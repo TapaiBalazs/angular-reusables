@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { AuthorisationModule } from '@nx-reusables/authorisation';
+import { AuthorisationModule } from '@btapai/ng-authorisation';
 import { AuthorisationDirectiveShowcaseRoutingModule } from './authorisation-directive-showcase.routing.module';
 import { AuthorisationShowcaseComponent } from './authorisation-showcase/authorisation-showcase.component';
 import { ReadRightOnlyComponent } from './read-right-only/read-right-only.component';

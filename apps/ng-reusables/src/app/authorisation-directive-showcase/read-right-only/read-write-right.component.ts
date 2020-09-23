@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { AUTHORISATION_HANDLER } from '@nx-reusables/authorisation';
+import { AUTHORISATION_HANDLER } from '@btapai/ng-authorisation';
 import { AuthorisationImplService } from '../../main/authorisation-impl.service';
 import { FormControl } from '@angular/forms';
 import { ReadRightOnlyComponent } from './read-right-only.component';
@@ -11,7 +11,7 @@ import { ReadRightOnlyComponent } from './read-right-only.component';
   providers: [
     {
       provide: 'ROLES',
-      useValue: ['BIG_RED_BUTTON_READ', 'BIG_RED_BUTTON_WRITE'],
+      useValue: ['BIG_RED_BUTTON_READ', 'BIG_RED_BUTTON_WRITE', 'LAUNCH_CODE_INPUTS_READ', 'LAUNCH_CODE_INPUTS_WRITE'],
     },
     {
       provide: AUTHORISATION_HANDLER,

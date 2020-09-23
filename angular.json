@@ -192,12 +192,27 @@
       "projectType": "library",
       "root": "libs/authorisation",
       "sourceRoot": "libs/authorisation/src",
-      "prefix": "btp",
+      "prefix": "nx-reusables",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/authorisation/tsconfig.lib.json",
+            "project": "libs/authorisation/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/authorisation/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/authorisation/tsconfig.lib.json", "libs/authorisation/tsconfig.spec.json"],
+            "tsConfig": [
+              "libs/authorisation/tsconfig.lib.json",
+              "libs/authorisation/tsconfig.spec.json"
+            ],
             "exclude": ["**/node_modules/**", "!libs/authorisation/**/*"]
           }
         },

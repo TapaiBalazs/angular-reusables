@@ -1,9 +1,19 @@
 {
-  "name": "authorisation",
+  "name": "@btapai/ng-authorisation",
+  "description": "An authorisation handler library for angular applications",
   "version": "0.0.1",
+  "author": "Balázs Tápai <balazs.tapai1990+npm@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "ngcc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TapaiBalazs/angular-reusables"
+  },
   "peerDependencies": {
-    "@angular/common": "^10.1.0",
-    "@angular/core": "^10.1.0"
+    "@angular/common": "^10.0.14",
+    "@angular/core": "^10.0.14"
   },
   "dependencies": {
     "tslib": "^2.0.0"

@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { AuthorisationInterface } from '@nx-reusables/authorisation';
+import { AuthorisationInterface } from '@btapai/ng-authorisation';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({

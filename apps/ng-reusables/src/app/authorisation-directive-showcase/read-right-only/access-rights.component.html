@@ -11,12 +11,10 @@
   </div>
 </div>
 <br />
-<form *authorisation="'BIG_RED_BUTTON'; control: formGroup" [formGroup]="formGroup">
-  <label for="testInput1">Form Group Input 1</label>
-  <input id="testInput1" formControlName="testInput1" />
+<form *authorisation="'LAUNCH_CODE_INPUTS'; control: launchCodesForm" [formGroup]="launchCodesForm">
+  <label for="primary-high-ranking-officer">First officer access code:</label>
+  <input id="primary-high-ranking-officer" formControlName="firstOfficerAccessCode" />
 
-  <br />
-
-  <label for="testInput2">Form Group Input 2</label>
-  <input id="testInput2" formControlName="testInput2" />
+  <label for="secondary-high-ranking-officer">Second officer access code:</label>
+  <input id="secondary-high-ranking-officer" formControlName="secondOfficerAccessCode" />
 </form>
