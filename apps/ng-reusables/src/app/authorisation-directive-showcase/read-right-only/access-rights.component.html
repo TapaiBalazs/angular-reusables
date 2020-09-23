@@ -1,0 +1,22 @@
+<div *authorisation="'BIG_RED_BUTTON'; let hasOnlyReadAccess">
+  The "hasOnlyReadAccess" method's return value: {{ hasOnlyReadAccess(false) }}
+  <br />
+  <button [disabled]="hasOnlyReadAccess(false)">BIG RED BUTTON</button>
+</div>
+<br />
+<div *authorisation="'BIG_RED_BUTTON'; control: formControl">
+  <div>
+    <label for="simpleControl">Simple FormControl bound using [formControl]</label>
+    <input id="simpleControl" [formControl]="formControl" />
+  </div>
+</div>
+<br />
+<form *authorisation="'BIG_RED_BUTTON'; control: formGroup" [formGroup]="formGroup">
+  <label for="testInput1">Form Group Input 1</label>
+  <input id="testInput1" formControlName="testInput1" />
+
+  <br />
+
+  <label for="testInput2">Form Group Input 2</label>
+  <input id="testInput2" formControlName="testInput2" />
+</form>

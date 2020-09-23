@@ -35,8 +35,9 @@ export class AuthorisationDirective<T extends AuthorisationInterface> implements
   }
 
   @Input()
-  set control(ctrl: AbstractControl) {
+  set authorisationControl(ctrl: AbstractControl) {
     this.formControl = ctrl;
+    this.updateView();
   }
 
   ngOnDestroy(): void {

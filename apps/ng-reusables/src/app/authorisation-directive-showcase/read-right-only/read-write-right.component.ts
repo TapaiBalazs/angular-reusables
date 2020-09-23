@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { AUTHORISATION_HANDLER } from '@nx-reusables/authorisation';
 import { AuthorisationImplService } from '../../main/authorisation-impl.service';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
+import { ReadRightOnlyComponent } from './read-right-only.component';
 
 @Component({
   selector: 'app-read-right-only',
@@ -10,7 +11,7 @@ import { FormBuilder, FormControl } from '@angular/forms';
   providers: [
     {
       provide: 'ROLES',
-      useValue: ['BIG_RED_BUTTON_READ'],
+      useValue: ['BIG_RED_BUTTON_READ', 'BIG_RED_BUTTON_WRITE'],
     },
     {
       provide: AUTHORISATION_HANDLER,
@@ -18,17 +19,4 @@ import { FormBuilder, FormControl } from '@angular/forms';
     },
   ],
 })
-export class ReadRightOnlyComponent implements OnInit {
-  formControl = new FormControl('test');
-
-  formGroup = this.formBuilder.group({
-    testInput1: ['testInput1'],
-    testInput2: ['testInput2'],
-  });
-
-  constructor(private auth: AuthorisationImplService, @Inject('ROLES') roles: string[], private formBuilder: FormBuilder) {
-    this.auth.setRoles(roles);
-  }
-
-  ngOnInit(): void {}
-}
+export class ReadWriteRightComponent extends ReadRightOnlyComponent {}
