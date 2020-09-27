@@ -1,4 +1,15 @@
-import { Directive, ElementRef, EmbeddedViewRef, Inject, Input, OnDestroy, Optional, TemplateRef, ViewContainerRef } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  EmbeddedViewRef,
+  Inject,
+  Input,
+  OnDestroy,
+  Optional,
+  Renderer2,
+  TemplateRef,
+  ViewContainerRef
+} from '@angular/core';
 import { AuthorisationInterface } from './authorisation.interface';
 import { Subscription } from 'rxjs';
 import { AbstractControl } from '@angular/forms';
@@ -23,6 +34,7 @@ export class AuthorisationDirective<T extends AuthorisationInterface> implements
     @Inject(ElementRef) private el: ElementRef,
     @Inject(ViewContainerRef) private viewContainer: ViewContainerRef,
     @Inject(TemplateRef) private templateRef: TemplateRef<AuthorisationContext>,
+    private renderer: Renderer2,
     @Inject(AUTHORISATION_CLASS) @Optional() private authClass: string
   ) {
     this.userSub = this.authService.onUserChange$.subscribe(this.updateView.bind(this));
@@ -69,7 +81,7 @@ export class AuthorisationDirective<T extends AuthorisationInterface> implements
   private setUnauthorised(): void {
     const boundElement = this.el.nativeElement.nextSibling;
     if (boundElement?.classList && this.authClass) {
-      boundElement.classList.add(this.authClass);
+      this.renderer.addClass(boundElement, this.authClass);
     }
   }
 }
