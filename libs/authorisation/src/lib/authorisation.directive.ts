@@ -7,7 +7,7 @@ import {
   OnDestroy,
   Optional,
   Renderer2,
-  TemplateRef,
+  TemplateRef, ViewChild,
   ViewContainerRef
 } from '@angular/core';
 import { AuthorisationInterface } from './authorisation.interface';
@@ -28,7 +28,7 @@ export class AuthorisationDirective<T extends AuthorisationInterface> implements
   private role: string;
   private viewRef: EmbeddedViewRef<AuthorisationContext> = null;
   private formControl: AbstractControl = null;
-
+  private boundElement: TemplateRef<any> = null;
   constructor(
     @Inject(AUTHORISATION_HANDLER) private authService: AuthorisationInterface,
     @Inject(ElementRef) private el: ElementRef,
@@ -50,6 +50,11 @@ export class AuthorisationDirective<T extends AuthorisationInterface> implements
   set authorisationControl(ctrl: AbstractControl) {
     this.formControl = ctrl;
     this.updateView();
+  }
+
+  @Input()
+  set authorisationElement(element: TemplateRef<any>) {
+    this.boundElement = element;
   }
 
   ngOnDestroy(): void {
@@ -79,7 +84,7 @@ export class AuthorisationDirective<T extends AuthorisationInterface> implements
   }
 
   private setUnauthorised(): void {
-    const boundElement = this.el.nativeElement.nextSibling;
+    const boundElement = this.el.nativeElement.previousSibling || this.el.nativeElement.nextSibling;
     if (boundElement?.classList && this.authClass) {
       this.renderer.addClass(boundElement, this.authClass);
     }

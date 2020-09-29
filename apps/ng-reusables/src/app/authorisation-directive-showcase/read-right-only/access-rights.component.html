@@ -4,14 +4,14 @@
   <button [disabled]="hasOnlyReadAccess(false)">BIG RED BUTTON</button>
 </div>
 <br />
-<div *authorisation="'BIG_RED_BUTTON'; control: formControl">
+<div #ngAuth *authorisation="'BIG_RED_BUTTON'; control formControl">
   <div>
     <label for="simpleControl">Simple FormControl bound using [formControl]</label>
     <input id="simpleControl" [formControl]="formControl" />
   </div>
 </div>
 <br />
-<form *authorisation="'LAUNCH_CODE_INPUTS'; control: launchCodesForm" [formGroup]="launchCodesForm">
+<form #ngAuth *authorisation="'LAUNCH_CODE_INPUTS'; control launchCodesForm" [formGroup]="launchCodesForm">
   <label for="primary-high-ranking-officer">First officer access code:</label>
   <input id="primary-high-ranking-officer" formControlName="firstOfficerAccessCode" />
 

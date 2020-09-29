@@ -1,7 +1,7 @@
 {
   "name": "@btapai/ng-error-handler",
   "description": "An error handler library for angular applications",
-  "version": "10.0.1",
+  "version": "10.0.2",
   "author": "Balázs Tápai <balazs.tapai1990+npm@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -9,7 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TapaiBalazs/angular-reusables"
+    "url": "https://github.com/TapaiBalazs/angular-reusables",
+    "directory": "libs/error-handler"
   },
   "dependencies": {
     "tslib": "^2.0.0"

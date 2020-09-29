@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Unauthorised access class declared at the top level. This classname should be unique and non-generic! */
+.app-unauthorised {
+  color: deeppink;
+}
