@@ -4,6 +4,7 @@ import { AuthorisationShowcaseComponent } from './authorisation-showcase/authori
 import { ReadRightOnlyComponent } from './read-right-only/read-right-only.component';
 import { ReadWriteRightComponent } from './read-right-only/read-write-right.component';
 import { NoRightsComponent } from './read-right-only/no-rights.component';
+import {BlockBackNavigationService} from './block-back-navigation.service';
 
 const routes: Routes = [
   {
@@ -13,14 +14,17 @@ const routes: Routes = [
       {
         path: 'read-only',
         component: ReadRightOnlyComponent,
+        canDeactivate: [BlockBackNavigationService]
       },
       {
         path: 'read-write',
         component: ReadWriteRightComponent,
+        canDeactivate: [BlockBackNavigationService]
       },
       {
         path: 'no-access',
         component: NoRightsComponent,
+        canDeactivate: [BlockBackNavigationService]
       },
     ],
   },
