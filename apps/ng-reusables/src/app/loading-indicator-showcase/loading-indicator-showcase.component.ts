@@ -7,6 +7,10 @@ import { startLoadingIndicator, stopLoadingIndicator } from '@btapai/ng-loading-
   styleUrls: ['./loading-indicator-showcase.component.css']
 })
 export class LoadingIndicatorShowcaseComponent {
+  state: 'def' | 'alt' = 'def';
+  state2: 'def' | 'alt' = 'def';
+
+
   @startLoadingIndicator
   triggerLoadingIndicator() {
     setTimeout(this.triggerLoadingIndicatorStop.bind(this), 100);

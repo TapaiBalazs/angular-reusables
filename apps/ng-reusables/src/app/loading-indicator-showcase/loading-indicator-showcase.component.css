@@ -18,3 +18,7 @@
   text-decoration: none;
   color: #7b1fa2;
 }
+
+.focustrap:focus {
+  outline: 2px solid deeppink;
+}

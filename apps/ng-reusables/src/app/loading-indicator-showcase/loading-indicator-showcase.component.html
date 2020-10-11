@@ -14,6 +14,25 @@
     </ul>
   </div>
 </section>
+
+<!--TODO: extract this into a different component-->
+
+<section>
+  <button class="focustrap">First</button>
+  <button class="focustrap">Second</button>
+  <button class="focustrap" *ngIf="state === 'def'" (click)="state = 'alt'">Third</button>
+  <button class="focustrap" *ngIf="state === 'alt'" (click)="state = 'def'">AltThird</button>
+  <button class="focustrap">Fourth</button>
+  <button class="focustrap" (click)="state2 = state2 === 'alt' ? 'def' : 'alt'">
+    <ng-container *ngIf="state2 === 'def'">Fifth</ng-container>
+    <ng-container *ngIf="state2 === 'alt'">AltFifth</ng-container>
+  </button>
+</section>
+
+<br>
+<br>
+<br>
+
 <section>
   <button data-test-id="cy-trigger-indicator" (click)="triggerLoadingIndicator()">
     START LOADING
