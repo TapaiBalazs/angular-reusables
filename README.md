@@ -12,3 +12,10 @@ A reusable component library collection, using [Nx](https://nx.dev)
 
 3. [Authorisation](./libs/authorisation/README.md) -
    A handy directive which helps with authorisation handling on the UI.
+
+
+## Case studies
+
+Complex UI logic series
+
+1. [Advanced search with polling](https://tapaibalazs.dev/complex-ui-logic-search-polling/) 

@@ -35,6 +35,17 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'search-polling',
+    component: MainComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./search-polling/search-polling.module').then((m) => m.SearchPollingModule),
+      },
+    ],
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: 'loading-indicator/spinner',

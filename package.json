@@ -41,6 +41,7 @@
     "@angular/router": "^10.0.0",
     "@nrwl/angular": "10.2.1",
     "rxjs": "~6.5.5",
+    "rxjs-marbles": "^6.0.1",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2"
   },

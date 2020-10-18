@@ -1,0 +1,38 @@
+<h2>Search with polling</h2>
+
+<p>We have two users: 'bela' and 'geza. Their emails are 'bela@test.com' and 'geza@test.com';</p>
+
+<p>You can try out search filtering using those parameters as filters. If you'd like to see how the operator works when
+  a handled error return a null value.</p>
+
+<br>
+<form [formGroup]="searchForm">
+  <label for="username">Username</label>
+  <input id="username" type="text" name="username" formControlName="username"/>
+  <br>
+  <label for="email">email</label>
+  <input id="email" type="text" name="email" formControlName="email"/>
+  <br>
+  <div *ngIf="searchForm.get('email').hasError('email')"> Invalid e-mail address.</div>
+
+  <br>
+  <select name="pollInterval" formControlName="pollInterval">
+    <option value="0">No polling</option>
+    <option value="5000">5 sec</option>
+    <option value="10000">10 sec</option>
+  </select>
+
+  <button *ngIf="searchState$ | async as state" (click)="triggerSearchAction(state)">
+    <ng-container *ngIf="state === 'IDLE' && searchForm.dirty">Search</ng-container>
+    <ng-container *ngIf="state === 'IDLE' && !searchForm.dirty">Refresh</ng-container>
+    <ng-container *ngIf="state === 'SEARCH'">Stop</ng-container>
+  </button>
+</form>
+
+<div>
+  Current search state: {{ searchState$ | async }}
+</div>
+
+<br>
+
+<div *ngFor="let result of searchResults$ | async">{{ result | json}}</div>
