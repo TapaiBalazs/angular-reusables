@@ -17,8 +17,13 @@
             "polyfills": "apps/ng-reusables/src/polyfills.ts",
             "tsConfig": "apps/ng-reusables/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/ng-reusables/src/favicon.ico", "apps/ng-reusables/src/assets"],
-            "styles": ["apps/ng-reusables/src/styles.css"],
+            "assets": [
+              "apps/ng-reusables/src/favicon.ico",
+              "apps/ng-reusables/src/assets"
+            ],
+            "styles": [
+              "apps/ng-reusables/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -50,7 +55,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -72,8 +80,14 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/ng-reusables/tsconfig.app.json", "apps/ng-reusables/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!apps/ng-reusables/**/*"]
+            "tsConfig": [
+              "apps/ng-reusables/tsconfig.app.json",
+              "apps/ng-reusables/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-reusables/**/*"
+            ]
           }
         },
         "test": {
@@ -81,7 +95,10 @@
           "options": {
             "jestConfig": "apps/ng-reusables/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/ng-reusables"
+          ]
         }
       }
     },
@@ -106,8 +123,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/ng-reusables-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ng-reusables-e2e/**/*"]
+            "tsConfig": [
+              "apps/ng-reusables-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-reusables-e2e/**/*"
+            ]
           }
         }
       }
@@ -122,7 +144,8 @@
           "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/error-handler/tsconfig.lib.json",
-            "project": "libs/error-handler/ng-package.json"
+            "project": "libs/error-handler/ng-package.json",
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           },
           "configurations": {
             "production": {
@@ -137,7 +160,10 @@
               "libs/error-handler/tsconfig.lib.json",
               "libs/error-handler/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/error-handler/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/error-handler/**/*"
+            ]
           }
         },
         "test": {
@@ -145,7 +171,10 @@
           "options": {
             "jestConfig": "libs/error-handler/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/error-handler"
+          ]
         }
       },
       "schematics": {}
@@ -160,7 +189,8 @@
           "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/loading-indicator/tsconfig.lib.json",
-            "project": "libs/loading-indicator/ng-package.json"
+            "project": "libs/loading-indicator/ng-package.json",
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           },
           "configurations": {
             "production": {
@@ -175,7 +205,10 @@
               "libs/loading-indicator/tsconfig.lib.json",
               "libs/loading-indicator/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/loading-indicator/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/loading-indicator/**/*"
+            ]
           }
         },
         "test": {
@@ -183,7 +216,10 @@
           "options": {
             "jestConfig": "libs/loading-indicator/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/loading-indicator"
+          ]
         }
       },
       "schematics": {}
@@ -198,7 +234,8 @@
           "builder": "@nrwl/angular:package",
           "options": {
             "tsConfig": "libs/authorisation/tsconfig.lib.json",
-            "project": "libs/authorisation/ng-package.json"
+            "project": "libs/authorisation/ng-package.json",
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           },
           "configurations": {
             "production": {
@@ -213,7 +250,10 @@
               "libs/authorisation/tsconfig.lib.json",
               "libs/authorisation/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/authorisation/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/authorisation/**/*"
+            ]
           }
         },
         "test": {
@@ -221,7 +261,10 @@
           "options": {
             "jestConfig": "libs/authorisation/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/authorisation"
+          ]
         }
       },
       "schematics": {}
