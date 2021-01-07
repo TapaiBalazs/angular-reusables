@@ -46,6 +46,17 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'safe-pipes',
+    component: MainComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./safe-pipes-showcase/safe-pipes-showcase.module').then((m) => m.SafePipesShowcaseModule),
+      },
+    ],
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: 'loading-indicator/spinner',

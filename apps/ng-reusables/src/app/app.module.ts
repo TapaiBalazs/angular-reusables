@@ -1,13 +1,13 @@
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AUTHORISATION_CLASS, AUTHORISATION_HANDLER, AuthorisationModule } from '@btapai/ng-authorisation';
-import { ERROR_HANDLER_CONFIG, ErrorHandlerConfig, ErrorHandlerModule } from '@btapai/ng-error-handler';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ErrorLogger } from './helpers/error-logger';
-import { AuthorisationImplService } from './main/authorisation-impl.service';
-import { MainComponent } from './main/main.component';
+import {HttpClientModule} from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AUTHORISATION_CLASS, AUTHORISATION_HANDLER, AuthorisationModule} from '@btapai/ng-authorisation';
+import {ERROR_HANDLER_CONFIG, ErrorHandlerConfig, ErrorHandlerModule} from '@btapai/ng-error-handler';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {ErrorLogger} from './helpers/error-logger';
+import {AuthorisationImplService} from './main/authorisation-impl.service';
+import {MainComponent} from './main/main.component';
 
 const CustomErrorHandlerConfig: ErrorHandlerConfig = {
   errorHandlerHooks: [ErrorLogger.logErrorMessage, console.error],
@@ -21,10 +21,11 @@ const CustomErrorHandlerConfig: ErrorHandlerConfig = {
       provide: 'ROLES',
       useValue: ['BIG_RED_BUTTON_READ', 'BIG_RED_BUTTON_WRITE'],
     },
-    { provide: ERROR_HANDLER_CONFIG, useValue: CustomErrorHandlerConfig },
-    { provide: AUTHORISATION_HANDLER, useClass: AuthorisationImplService },
-    { provide: AUTHORISATION_CLASS, useValue: 'app-unauthorised' },
+    {provide: ERROR_HANDLER_CONFIG, useValue: CustomErrorHandlerConfig},
+    {provide: AUTHORISATION_HANDLER, useClass: AuthorisationImplService},
+    {provide: AUTHORISATION_CLASS, useValue: 'app-unauthorised'},
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

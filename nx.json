@@ -40,6 +40,9 @@
     },
     "authorisation": {
       "tags": []
+    },
+    "safe-pipes": {
+      "tags": []
     }
   }
 }

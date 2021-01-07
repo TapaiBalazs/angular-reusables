@@ -17,13 +17,8 @@
             "polyfills": "apps/ng-reusables/src/polyfills.ts",
             "tsConfig": "apps/ng-reusables/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/ng-reusables/src/favicon.ico",
-              "apps/ng-reusables/src/assets"
-            ],
-            "styles": [
-              "apps/ng-reusables/src/styles.css"
-            ],
+            "assets": ["apps/ng-reusables/src/favicon.ico", "apps/ng-reusables/src/assets"],
+            "styles": ["apps/ng-reusables/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -55,9 +50,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -79,14 +72,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/ng-reusables/tsconfig.app.json",
-              "apps/ng-reusables/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/ng-reusables/**/*"
-            ]
+            "tsConfig": ["apps/ng-reusables/tsconfig.app.json", "apps/ng-reusables/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!apps/ng-reusables/**/*"]
           }
         },
         "test": {
@@ -95,9 +82,7 @@
             "jestConfig": "apps/ng-reusables/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/apps/ng-reusables"
-          ]
+          "outputs": ["coverage/apps/ng-reusables"]
         }
       }
     },
@@ -122,13 +107,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/ng-reusables-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/ng-reusables-e2e/**/*"
-            ]
+            "tsConfig": ["apps/ng-reusables-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/ng-reusables-e2e/**/*"]
           }
         }
       }
@@ -155,14 +135,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/error-handler/tsconfig.lib.json",
-              "libs/error-handler/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/error-handler/**/*"
-            ]
+            "tsConfig": ["libs/error-handler/tsconfig.lib.json", "libs/error-handler/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/error-handler/**/*"]
           }
         },
         "test": {
@@ -171,9 +145,7 @@
             "jestConfig": "libs/error-handler/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/error-handler"
-          ]
+          "outputs": ["coverage/libs/error-handler"]
         }
       },
       "schematics": {}
@@ -200,14 +172,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/loading-indicator/tsconfig.lib.json",
-              "libs/loading-indicator/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/loading-indicator/**/*"
-            ]
+            "tsConfig": ["libs/loading-indicator/tsconfig.lib.json", "libs/loading-indicator/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/loading-indicator/**/*"]
           }
         },
         "test": {
@@ -216,9 +182,7 @@
             "jestConfig": "libs/loading-indicator/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/loading-indicator"
-          ]
+          "outputs": ["coverage/libs/loading-indicator"]
         }
       },
       "schematics": {}
@@ -245,14 +209,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "libs/authorisation/tsconfig.lib.json",
-              "libs/authorisation/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/authorisation/**/*"
-            ]
+            "tsConfig": ["libs/authorisation/tsconfig.lib.json", "libs/authorisation/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/authorisation/**/*"]
           }
         },
         "test": {
@@ -261,12 +219,33 @@
             "jestConfig": "libs/authorisation/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/authorisation"
-          ]
+          "outputs": ["coverage/libs/authorisation"]
         }
       },
       "schematics": {}
+    },
+    "safe-pipes": {
+      "projectType": "library",
+      "root": "libs/safe-pipes",
+      "sourceRoot": "libs/safe-pipes/src",
+      "prefix": "nx-reusables",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/safe-pipes/tsconfig.lib.json", "libs/safe-pipes/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/safe-pipes/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/safe-pipes"],
+          "options": {
+            "jestConfig": "libs/safe-pipes/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -314,6 +293,9 @@
     },
     "@nrwl/angular:library": {
       "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "css"
     }
   },
   "defaultProject": "ng-reusables"
