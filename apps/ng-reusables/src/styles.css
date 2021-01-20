@@ -4,3 +4,8 @@
 .app-unauthorised {
   color: deeppink;
 }
+
+/* An example class for injecting HTML files into an angular application that use styles */
+.legal-color-red {
+  color: red;
+}

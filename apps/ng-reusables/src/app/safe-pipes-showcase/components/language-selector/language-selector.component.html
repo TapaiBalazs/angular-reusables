@@ -1,0 +1,2 @@
+<button [class.active]="(currentLang$ | async) === 'hu'" (click)="language = 'hu'"> HU </button>
+<button [class.active]="(currentLang$ | async) === 'en'" (click)="language = 'en'"> EN </button>

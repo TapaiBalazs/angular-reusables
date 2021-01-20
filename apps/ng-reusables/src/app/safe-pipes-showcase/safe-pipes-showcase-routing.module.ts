@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {SafePipesDisplayComponent} from './safe-pipes-display/safe-pipes-display.component';
+import {SafePipesDisplayComponent} from './components/safe-pipes-display/safe-pipes-display.component';
 
 
 const routes: Routes = [

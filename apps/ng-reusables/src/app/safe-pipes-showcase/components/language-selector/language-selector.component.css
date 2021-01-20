@@ -1,0 +1,8 @@
+button {
+  margin: 0.1rem;
+}
+
+.active {
+  background-color: #7b1fa2;
+  color: #bbbbbb;
+}
