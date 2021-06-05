@@ -45,9 +45,12 @@
       CLEAR LOADERS
     </button>
     <br>
-    <span *ngFor="let timeout of multiTrigger">
-     Indicator stars for {{timeout}} ms.
-    </span>
+    <ng-container *ngFor="let timeout of multiTrigger; let i = index">
+      <span>
+       {{ i + 1 }}. loading-indicator stars for {{timeout}} ms.
+      </span>
+      <br>
+    </ng-container>
   </div>
 </section>
 <router-outlet></router-outlet>
