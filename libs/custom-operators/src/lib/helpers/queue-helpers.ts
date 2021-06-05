@@ -1,5 +1,4 @@
-import {Observer, Subscription} from 'rxjs';
-
+import {Observer} from 'rxjs';
 
 export function createSourceSubscriber<T>(queue: T[], observer: Observer<T | T[]>, config): Observer<T | T[]> {
   return {
@@ -9,14 +8,8 @@ export function createSourceSubscriber<T>(queue: T[], observer: Observer<T | T[]
         observer.next([...queue]);
       }
     },
-    error: error => {
-      observer.error(error);
-      this.error(error);
-    },
-    complete: () => {
-      observer.complete();
-      this.complete();
-    }
+    error: error => observer.error(error),
+    complete: () => observer.complete()
   };
 }
 
@@ -30,13 +23,7 @@ export function createEmitterSubscriber<T>(arrayMethod: 'pop' | 'shift', queue: 
         observer.next(value);
       }
     },
-    error: error => {
-      observer.error(error);
-      this.error(error);
-    },
-    complete: () => {
-      observer.complete();
-      this.complete();
-    }
+    error: error => observer.error(error),
+    complete: () => observer.complete()
   };
 }
