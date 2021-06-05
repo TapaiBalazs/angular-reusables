@@ -1,10 +1,18 @@
 {
   "name": "@btapai/custom-rxjs-operators",
+  "description": "A library for my custom rxjs operators",
+  "author": "Balázs Tápai <balazs.tapai1990+npm@gmail.com>",
+  "license": "MIT",
   "version": "0.0.1",
   "peerDependencies": {
-    "rxjs": "^6.0.0"
+    "rxjs": ">= 6.0.0 <= ^7.4.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TapaiBalazs/angular-reusables",
+    "directory": "libs/custom-rxjs-operators"
   }
 }
