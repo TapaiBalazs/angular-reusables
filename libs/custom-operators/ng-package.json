@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/libs/custom-rxjs-operators",
+  "dest": "../../dist/libs/custom-operators",
   "lib": {
     "entryFile": "src/index.ts"
   }

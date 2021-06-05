@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'custom-rxjs-operators',
+  displayName: 'custom-operators',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -11,7 +11,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../coverage/libs/custom-rxjs-operators',
+  coverageDirectory: '../../coverage/libs/custom-operators',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

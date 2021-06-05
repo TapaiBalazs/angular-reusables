@@ -247,36 +247,36 @@
         }
       }
     },
-    "custom-rxjs-operators": {
+    "custom-operators": {
       "projectType": "library",
-      "root": "libs/custom-rxjs-operators",
-      "sourceRoot": "libs/custom-rxjs-operators/src",
+      "root": "libs/custom-operators",
+      "sourceRoot": "libs/custom-operators/src",
       "prefix": "nx-reusables",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/custom-rxjs-operators/tsconfig.lib.json",
-            "project": "libs/custom-rxjs-operators/ng-package.json"
+            "tsConfig": "libs/custom-operators/tsconfig.lib.json",
+            "project": "libs/custom-operators/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/custom-rxjs-operators/tsconfig.lib.prod.json"
+              "tsConfig": "libs/custom-operators/tsconfig.lib.prod.json"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/custom-rxjs-operators/tsconfig.lib.json", "libs/custom-rxjs-operators/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!libs/custom-rxjs-operators/**/*"]
+            "tsConfig": ["libs/custom-operators/tsconfig.lib.json", "libs/custom-operators/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!libs/custom-operators/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/custom-rxjs-operators"],
+          "outputs": ["coverage/libs/custom-operators"],
           "options": {
-            "jestConfig": "libs/custom-rxjs-operators/jest.config.js",
+            "jestConfig": "libs/custom-operators/jest.config.js",
             "passWithNoTests": true
           }
         }

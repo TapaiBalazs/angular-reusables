@@ -1,5 +1,7 @@
 # LoadingIndicator
 
+For a quick demo, see this [stackblitz](https://stackblitz.com/edit/angular-ivy-vaaxh8?file=src/app/app.component.ts)
+
 ## How to install
 
 Install the package with the following script:

@@ -44,7 +44,7 @@
     "safe-pipes": {
       "tags": []
     },
-    "custom-rxjs-operators": {
+    "custom-operators": {
       "tags": []
     }
   }
