@@ -15,8 +15,42 @@
   </div>
 </section>
 <section>
+  <label>
+    Loading timer (ms):
+    <input type="number" step="1000" [formControl]="control">
+  </label>
+  <br>
   <button data-test-id="cy-trigger-indicator" (click)="triggerLoadingIndicator()">
     START LOADING
   </button>
+</section>
+<hr>
+<section class="multi-trigger">
+  <div>
+    <label>
+      Add multiple loaders (ms):
+      <input type="number" step="1000" [formControl]="control1">
+    </label>
+    <br>
+    <button data-test-id="cy-trigger-indicator" (click)="addToMultiTrigger(control1.value)">
+      ADD LOADER
+    </button>
+    <button data-test-id="cy-trigger-indicator" (click)="triggerMultipleLoadingIndicators()">
+      START MULTIPLE LOADING
+    </button>
+  </div>
+  <br>
+  <div>
+    <button (click)="clearMultiTrigger()">
+      CLEAR LOADERS
+    </button>
+    <br>
+    <ng-container *ngFor="let timeout of multiTrigger; let i = index">
+      <span>
+       {{ i + 1 }}. loading-indicator stars for {{timeout}} ms.
+      </span>
+      <br>
+    </ng-container>
+  </div>
 </section>
 <router-outlet></router-outlet>

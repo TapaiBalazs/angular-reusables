@@ -19,7 +19,8 @@
       "@btapai/ng-error-handler": ["libs/error-handler/src/index.ts"],
       "@btapai/ng-loading-indicator": ["libs/loading-indicator/src/index.ts"],
       "@btapai/ng-authorisation": ["libs/authorisation/src/index.ts"],
-      "@btapai/ng-safe-pipes": ["libs/safe-pipes/src/index.ts"]
+      "@btapai/ng-safe-pipes": ["libs/safe-pipes/src/index.ts"],
+      "@btapai/custom-rxjs-operators": ["libs/custom-rxjs-operators/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -18,9 +18,7 @@ export class OverlayComponent implements OnInit, OnDestroy {
 
   constructor(@Inject(LOADING_INDICATOR_CONFIG) private config: LoadingIndicatorConfig) {}
 
-  get isLoading$(): Observable<boolean> {
-    return isLoading$;
-  }
+  readonly isLoading$: Observable<boolean> = isLoading$;
 
   get overlayColor(): string {
     return this.config.overlayColor || 'rgba(100,100,100,0.3)';
