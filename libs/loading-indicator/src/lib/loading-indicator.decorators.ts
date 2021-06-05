@@ -1,5 +1,6 @@
-import {BehaviorSubject, Observable, Subscriber} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {filter, map, pluck, share, tap} from 'rxjs/operators';
+import {fifoQueue} from '@btapai/custom-rxjs-operators';
 
 const indicatorSubject = new BehaviorSubject<boolean>(false);
 
@@ -13,48 +14,6 @@ export const isLoading$ = indicatorStart$.pipe(
   pluck('length'),
   map(Boolean),
 );
-
-function fifoQueue<T>(emit$: Observable<T | T[]>, config: { emitQueue: boolean } = {emitQueue: false}): (source$: Observable<T>) => Observable<T | T[]> {
-  const values: T[] = [];
-
-  return (source$: Observable<T>) => {
-    return new Observable<T | T[]>((observer: Subscriber<unknown>) => {
-      const sourceSub = source$
-        .subscribe({
-          next: (value) => {
-            values.push(value);
-            if (config.emitQueue) {
-              observer.next(values);
-            }
-          },
-          error: observer.error,
-          complete: observer.complete
-        });
-
-      const emitterSub = emit$
-        .subscribe(({
-          next: () => {
-            const value = values.shift();
-            if (config.emitQueue) {
-              observer.next(values);
-            } else {
-              observer.next(value);
-            }
-          },
-          error: observer.error,
-          complete: observer.complete
-        }));
-
-      return {
-        unsubscribe() {
-          sourceSub.unsubscribe();
-          emitterSub.unsubscribe();
-        }
-      };
-    });
-  };
-}
-
 
 export function startLoadingIndicator(): (target: any, propertyKey: string | symbol, propertyDescriptor: PropertyDescriptor) => any {
   return (target: any, propertyKey: string | symbol, propertyDescriptor: PropertyDescriptor): any => {

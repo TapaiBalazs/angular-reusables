@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/loading-indicator',
     '<rootDir>/libs/authorisation',
     '<rootDir>/libs/safe-pipes',
+    '<rootDir>/libs/custom-rxjs-operators',
   ],
 };
