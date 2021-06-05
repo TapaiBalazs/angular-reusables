@@ -7,12 +7,12 @@ import { startLoadingIndicator, stopLoadingIndicator } from '@btapai/ng-loading-
   styleUrls: ['./loading-indicator-showcase.component.css']
 })
 export class LoadingIndicatorShowcaseComponent {
-  @startLoadingIndicator
+  @startLoadingIndicator()
   triggerLoadingIndicator() {
     setTimeout(this.triggerLoadingIndicatorStop.bind(this), 100);
   }
 
-  @stopLoadingIndicator
+  @stopLoadingIndicator()
   triggerLoadingIndicatorStop() {
     console.log('stopped');
   }

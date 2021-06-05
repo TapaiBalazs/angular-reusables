@@ -1,9 +1,9 @@
 import { startLoadingIndicator, stopLoadingIndicator } from '../lib/loading-indicator.decorators';
 
 export class TriggerLoadingIndicator {
-  @startLoadingIndicator
+  @startLoadingIndicator()
   start(): void {}
 
-  @stopLoadingIndicator
+  @stopLoadingIndicator()
   stop(): void {}
 }

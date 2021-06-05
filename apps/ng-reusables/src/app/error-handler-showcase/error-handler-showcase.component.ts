@@ -10,7 +10,7 @@ import { startLoadingIndicator, stopLoadingIndicator } from '@btapai/ng-loading-
 export class ErrorHandlerShowcaseComponent {
   constructor(private http: HttpClient) {}
 
-  @startLoadingIndicator
+  @startLoadingIndicator()
   trigger404Error() {
     this.http.get(this.getUrl()).subscribe(this.handleResult.bind(this));
   }
@@ -19,12 +19,11 @@ export class ErrorHandlerShowcaseComponent {
     throw new Error('this is a runtime error');
   }
 
-  // @startLoadingIndicator
   getUrl(): string {
     return 'wrong/url';
   }
 
-  @stopLoadingIndicator
+  @stopLoadingIndicator()
   handleResult(result): void {
     console.log(result);
   }
