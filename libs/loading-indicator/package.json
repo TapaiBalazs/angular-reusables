@@ -3,7 +3,7 @@
   "description": "A loading indicator library for angular applications",
   "author": "Balázs Tápai <balazs.tapai1990+npm@gmail.com>",
   "license": "MIT",
-  "version": "11.0.0",
+  "version": "11.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/TapaiBalazs/angular-reusables",

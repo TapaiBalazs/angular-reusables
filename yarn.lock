@@ -1836,10 +1836,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@btapai/custom-rxjs-operators@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@btapai/custom-rxjs-operators/-/custom-rxjs-operators-0.0.1.tgz#b9e5017e272fb15e5b321bde79c0fc5dd93f61c2"
-  integrity sha512-jLC/HEQ4xPzXlQXEGXKaSWgnLWGk1UYcpa7Kaly5yNUbMHCjUkDopBXT0z7foZC7pzVD9V0Zi/FjA+ycz/S74g==
+"@btapai/custom-rxjs-operators@latest":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@btapai/custom-rxjs-operators/-/custom-rxjs-operators-0.0.2.tgz#9905270f517eb47eaa05e20b42c45eae36e97b94"
+  integrity sha512-OWDFCYxV6Ac9dkfYgvRQkxM8YUABDxPvN0e/l9ctznIBS+utNYuwKdnLZ9ffuFVc8LuZgnbNsDF8wvJ8Zyz7aA==
   dependencies:
     tslib "^2.0.0"
 

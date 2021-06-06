@@ -1,10 +1,10 @@
 import {BehaviorSubject, Observable} from 'rxjs';
-import {filter, map, pluck, share, tap} from 'rxjs/operators';
+import {filter, map, pluck, shareReplay, tap} from 'rxjs/operators';
 import {fifoQueue} from '@btapai/custom-rxjs-operators';
 
 const indicatorSubject = new BehaviorSubject<boolean>(false);
 
-const indicatorState$ = indicatorSubject.asObservable().pipe(share());
+const indicatorState$ = indicatorSubject.asObservable().pipe(shareReplay(1));
 
 const indicatorStart$ = indicatorState$.pipe(filter(indicatorState => indicatorState));
 const indicatorStop$ = indicatorState$.pipe(filter(indicatorState => !indicatorState));
