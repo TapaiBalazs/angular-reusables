@@ -13,6 +13,8 @@ A reusable component library collection, using [Nx](https://nx.dev)
 3. [Authorisation](./libs/authorisation/README.md) -
    A handy directive which helps with authorisation handling on the UI.
 
+4. [Custom RxJS Operators](./libs/custom-operators/README.md) - 
+   Custom RxJS operators
 
 ## Case studies
 

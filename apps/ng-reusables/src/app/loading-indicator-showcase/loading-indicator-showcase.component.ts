@@ -11,8 +11,6 @@ export class LoadingIndicatorShowcaseComponent {
 
   readonly control = new FormControl(1000)
   readonly control1 = new FormControl(1000)
-  readonly control2 = new FormControl(1000)
-  readonly control3 = new FormControl(1000)
 
   multiTrigger = [10000, 5000];
 
