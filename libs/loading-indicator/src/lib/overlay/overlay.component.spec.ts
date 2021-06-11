@@ -3,6 +3,7 @@ import { skip, take } from 'rxjs/operators';
 import { TriggerLoadingIndicator } from '../../test/TriggerLoadingIndicator';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { OverlayComponent } from './overlay.component';
+import {DEFAULT_CONFIG, LOADING_INDICATOR_CONFIG} from '../loading-indicator.config';
 
 describe('LoadingIndicatorComponent', () => {
   let component: OverlayComponent;
@@ -13,6 +14,12 @@ describe('LoadingIndicatorComponent', () => {
     TestBed.configureTestingModule({
       declarations: [OverlayComponent],
       schemas: [NO_ERRORS_SCHEMA],
+      providers: [
+        {
+          provide: LOADING_INDICATOR_CONFIG,
+          useValue: DEFAULT_CONFIG
+        }
+      ]
     }).compileComponents();
 
     trigger = new TriggerLoadingIndicator();

@@ -55,14 +55,40 @@ describe(`filoQueue operator`, () => {
       });
     });
 
-    it(`completes when the source observable completes and stops emitting`, () => {
+    it(`completes when the source and the emitter observables complete and stops emitting`, () => {
+      testScheduler.run((helpers) => {
+        const {cold, expectObservable} = helpers;
+
+        const source$ = cold('-a--b--|', {a: 1, b: 2});
+        const emitter$ = cold('-----x---y-z|');
+
+        const expected = '-----b---a-u|';
+
+        expectObservable(source$.pipe(filoQueue<number>(emitter$))).toBe(expected, {b: 2, a: 1, u: undefined});
+      });
+    });
+
+    it(`does not complete when the source observable completes and it continues emitting`, () => {
       testScheduler.run((helpers) => {
         const {cold, expectObservable} = helpers;
 
         const source$ = cold('-a--b--|', {a: 1, b: 2});
         const emitter$ = cold('-----x---y-z-');
 
-        const expected = '-----b-|';
+        const expected = '-----b---a-u-';
+
+        expectObservable(source$.pipe(filoQueue<number>(emitter$))).toBe(expected, {b: 2, a: 1, u: undefined});
+      });
+    });
+
+    it(`completes when the emitter observable completes and it stops emitting`, () => {
+      testScheduler.run((helpers) => {
+        const {cold, expectObservable} = helpers;
+
+        const source$ = cold('-a--b---c', {a: 1, b: 2, c: 3});
+        const emitter$ = cold('-----x|');
+
+        const expected = '-----b|';
 
         expectObservable(source$.pipe(filoQueue<number>(emitter$))).toBe(expected, {b: 2});
       });

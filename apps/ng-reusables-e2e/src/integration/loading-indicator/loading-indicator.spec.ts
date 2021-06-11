@@ -20,7 +20,7 @@ describe(`Loading Spinner`, () => {
   it('The loading-indicator disappears after the stop decorator is called', () => {
     cy.get('[data-test-id="cy-trigger-indicator"]').click();
     cy.get('btp-overlay').should('be.visible');
-    cy.wait(100);
+    cy.wait(1000);
     cy.get('btp-overlay').should('not.be.visible');
   });
 
@@ -44,5 +44,19 @@ describe(`Loading Spinner`, () => {
     cy.get('btp-overlay').should('be.visible');
     cy.get('.btp-loading-indicator__container').should('exist');
     cy.get('app-loading-message').should('exist');
+  });
+
+  it(`When there are multiple loading indicators started, the loading indicator is present until the longest delay is finished`, () => {
+    cy.get(`[data-test-id="loader text 1"]`).should('be.visible').and('contain', '1. loading-indicator stars for 10000 ms.');
+    cy.get(`[data-test-id="loader text 2"]`).should('be.visible').and('contain', '2. loading-indicator stars for 5000 ms.');
+    cy.get(`[data-test-id="cy-start-multiple-loading"]`).should('be.visible').click();
+    cy.get('btp-overlay').should('be.visible');
+    cy.get('.btp-loading-indicator__container').should('exist');
+    cy.wait(6000);
+    cy.get('btp-overlay').should('be.visible');
+    cy.get('.btp-loading-indicator__container').should('exist');
+    cy.wait(4000);
+    cy.get('.btp-loading-indicator__container').should('not.exist');
+    cy.get('btp-overlay').should('not.be.visible');
   });
 });

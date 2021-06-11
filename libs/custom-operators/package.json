@@ -3,7 +3,7 @@
   "description": "A library for my custom rxjs operators",
   "author": "Balázs Tápai <balazs.tapai1990+npm@gmail.com>",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "peerDependencies": {
     "rxjs": "^6.0.0"
   },

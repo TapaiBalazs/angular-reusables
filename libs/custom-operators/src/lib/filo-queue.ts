@@ -1,5 +1,6 @@
 import {Observable, Subscriber} from 'rxjs';
 import {createEmitterSubscriber, createSourceSubscriber} from './helpers/queue-helpers';
+import {QueueConfig} from './interfaces/queue.interfaces';
 
 /**
  * First in, last out queue operator.
@@ -15,7 +16,7 @@ import {createEmitterSubscriber, createSourceSubscriber} from './helpers/queue-h
  * @param emit$ observable, which triggers the result observable to emit.
  * @param config { emitQueue: false } configuration, to emit the whole queue instead of its values.
  */
-export function filoQueue<T>(emit$: Observable<unknown>, config: { emitQueue: boolean } = {emitQueue: false}): (source$: Observable<T>) => Observable<T | T[]> {
+export function filoQueue<T>(emit$: Observable<unknown>, config: QueueConfig = {emitQueue: false}): (source$: Observable<T>) => Observable<T | T[]> {
   const queue: T[] = [];
 
   return (source$: Observable<T>) => {
@@ -24,7 +25,7 @@ export function filoQueue<T>(emit$: Observable<unknown>, config: { emitQueue: bo
         .subscribe(createSourceSubscriber(queue, observer, config));
 
       const emitterSub = emit$
-        .subscribe(createEmitterSubscriber("pop", queue, observer, config));
+        .subscribe(createEmitterSubscriber('pop', queue, observer, config, sourceSub));
 
       return {
         unsubscribe() {

@@ -32,21 +32,21 @@
       <input type="number" step="1000" [formControl]="control1">
     </label>
     <br>
-    <button data-test-id="cy-trigger-indicator" (click)="addToMultiTrigger(control1.value)">
+    <button data-test-id="cy-add-loader" (click)="addToMultiTrigger(control1.value)">
       ADD LOADER
     </button>
-    <button data-test-id="cy-trigger-indicator" (click)="triggerMultipleLoadingIndicators()">
+    <button data-test-id="cy-start-multiple-loading" (click)="triggerMultipleLoadingIndicators()">
       START MULTIPLE LOADING
     </button>
   </div>
   <br>
   <div>
-    <button (click)="clearMultiTrigger()">
+    <button data-test-id="cy-clear-loaders" (click)="clearMultiTrigger()">
       CLEAR LOADERS
     </button>
     <br>
     <ng-container *ngFor="let timeout of multiTrigger; let i = index">
-      <span>
+      <span [attr.data-test-id]="'loader text ' + (i + 1) ">
        {{ i + 1 }}. loading-indicator stars for {{timeout}} ms.
       </span>
       <br>
